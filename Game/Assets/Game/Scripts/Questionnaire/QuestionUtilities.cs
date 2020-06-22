@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class QuestionUtilities : MonoBehaviour
@@ -15,7 +16,7 @@ public class QuestionUtilities : MonoBehaviour
         return allQuestions[idx];
     }
 
-    public Question PrepareQuestion()
+    public void PrepareQuestion()
     {
         Question question = GetRandomQuestion();
         
@@ -31,7 +32,26 @@ public class QuestionUtilities : MonoBehaviour
         }
         question.BadAnswer = badAnswer;
         
-        return question;
+        DisplayQuestion(question);
+    }
+
+    public void DisplayQuestion(Question question)
+    {
+        GameObject.Find("Question").GetComponent<TextMeshProUGUI>().text = question.question;
+        int idx = new System.Random().Next(0, 4);
+        List<TextMeshProUGUI> answers = new List<TextMeshProUGUI>();
+        answers.Add(GameObject.Find("AnswerTextA").GetComponent<TextMeshProUGUI>());
+        answers.Add(GameObject.Find("AnswerTextB").GetComponent<TextMeshProUGUI>());
+        answers.Add(GameObject.Find("AnswerTextC").GetComponent<TextMeshProUGUI>());
+        answers.Add(GameObject.Find("AnswerTextD").GetComponent<TextMeshProUGUI>());
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (i == idx)
+                answers[i].text = question.goodAnswer[0];
+            else
+                answers[i].text = question.BadAnswer[(i > idx) ? i-1 : i];
+        }
     }
 
     private void Start()
