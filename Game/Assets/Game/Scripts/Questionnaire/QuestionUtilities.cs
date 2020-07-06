@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestionUtilities : MonoBehaviour
 {
     private InitQuestion _initQuestion;
     private List<Question> allQuestions;
+    private int goodAnswer = -1;
+    private List<TextMeshProUGUI> answers;
     
     public Question GetRandomQuestion()
     {
@@ -22,7 +25,8 @@ public class QuestionUtilities : MonoBehaviour
         
         int idxGoodAnswer = new System.Random().Next(0, question.goodAnswer.Count);
         question.goodAnswer = new List<string>() {question.goodAnswer[idxGoodAnswer]};
-        
+
+        Time.timeScale = 0;
         List<string> badAnswer = new List<string>();
         for (int i = 0; i < 3; i++)
         {
@@ -38,8 +42,8 @@ public class QuestionUtilities : MonoBehaviour
     public void DisplayQuestion(Question question)
     {
         GameObject.Find("Question").GetComponent<TextMeshProUGUI>().text = question.question;
-        int idx = new System.Random().Next(0, 4);
-        List<TextMeshProUGUI> answers = new List<TextMeshProUGUI>();
+        goodAnswer = new System.Random().Next(0, 4);
+        answers = new List<TextMeshProUGUI>();
         answers.Add(GameObject.Find("AnswerTextA").GetComponent<TextMeshProUGUI>());
         answers.Add(GameObject.Find("AnswerTextB").GetComponent<TextMeshProUGUI>());
         answers.Add(GameObject.Find("AnswerTextC").GetComponent<TextMeshProUGUI>());
@@ -47,11 +51,36 @@ public class QuestionUtilities : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            if (i == idx)
+            if (i == goodAnswer)
                 answers[i].text = question.goodAnswer[0];
             else
-                answers[i].text = question.BadAnswer[(i > idx) ? i-1 : i];
+                answers[i].text = question.BadAnswer[(i > goodAnswer) ? i-1 : i];
         }
+    }
+
+    public void CheckAnswer(int selectedAnswer)
+    {
+        // GameObject.Find("QuestionnaireMenu").SetActive(false);
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (i == goodAnswer)
+            {
+                ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
+                colors.normalColor = Color.green;
+                colors.selectedColor = Color.green;
+                answers[i].transform.parent.GetComponent<Button>().colors = colors;
+            }
+            else
+            {
+                ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
+                colors.normalColor = Color.red;
+                colors.selectedColor = Color.red;
+                answers[i].transform.parent.GetComponent<Button>().colors = colors;
+            }
+        }
+
+        Time.timeScale = 1;
     }
 
     private void Start()

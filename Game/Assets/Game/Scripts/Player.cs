@@ -188,6 +188,8 @@ namespace Completed
 			//Check if the tag of the trigger collided with is Food.
 			else if(other.tag == "Food")
 			{
+				// TODO remove next line, just ofr test
+				GameObject.Find("QuestionnaireMenu").SetActive(true);
 				GameObject.FindGameObjectWithTag("GameManager").GetComponent<QuestionUtilities>().PrepareQuestion();
 				
 				//Add pointsPerFood to the players current food total.

@@ -14,6 +14,12 @@ Game/[Ll]ogs/
 Game/[Mm]emoryCaptures/
 
 Game/Temp/*
+Game/Library/*
+Game/Obj/*
+Game/Build/*
+Game/Builds/*
+Game/Logs/*
+Game/MemoryCaptures/*
 
 # Never ignore Asset meta data
 !Game/[Aa]ssets/**/*.meta
