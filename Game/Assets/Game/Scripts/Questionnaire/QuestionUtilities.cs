@@ -11,7 +11,8 @@ public class QuestionUtilities : MonoBehaviour
     private List<Question> allQuestions;
     private int goodAnswer = -1;
     private List<TextMeshProUGUI> answers;
-    
+    public GameObject questionnaireMenu;
+
     public Question GetRandomQuestion()
     {
         allQuestions = _initQuestion.GetAllQuestions();
@@ -26,7 +27,6 @@ public class QuestionUtilities : MonoBehaviour
         int idxGoodAnswer = new System.Random().Next(0, question.goodAnswer.Count);
         question.goodAnswer = new List<string>() {question.goodAnswer[idxGoodAnswer]};
 
-        Time.timeScale = 0;
         List<string> badAnswer = new List<string>();
         for (int i = 0; i < 3; i++)
         {
@@ -51,6 +51,11 @@ public class QuestionUtilities : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
+            ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
+            colors.normalColor = Color.white;
+            colors.selectedColor = Color.white;
+            answers[i].transform.parent.GetComponent<Button>().colors = colors;
+            
             if (i == goodAnswer)
                 answers[i].text = question.goodAnswer[0];
             else
@@ -60,7 +65,6 @@ public class QuestionUtilities : MonoBehaviour
 
     public void CheckAnswer(int selectedAnswer)
     {
-        // GameObject.Find("QuestionnaireMenu").SetActive(false);
 
         for (int i = 0; i < 4; i++)
         {
@@ -79,7 +83,17 @@ public class QuestionUtilities : MonoBehaviour
                 answers[i].transform.parent.GetComponent<Button>().colors = colors;
             }
         }
+    }
+    
+    public void DisplayQuestionnaireMenu()
+    {
+        Time.timeScale = 0;
+        questionnaireMenu.SetActive(true);
+    }
 
+    public void HideQuestionnaireMenu()
+    {
+        questionnaireMenu.SetActive(false);
         Time.timeScale = 1;
     }
 
