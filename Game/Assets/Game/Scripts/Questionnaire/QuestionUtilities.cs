@@ -10,10 +10,14 @@ public class QuestionUtilities : MonoBehaviour
 {
     private InitQuestion _initQuestion;
     private List<Question> allQuestions;
-    private int goodAnswer = -1;
     private List<TextMeshProUGUI> answers;
     Dictionary<string, bool> answersDict;
+    private List<int> selectedAnswers;
+    private int nbGoodAnswerInQuestion;
+    private int nbGoodAnswerSelected;
     public GameObject questionnaireMenu;
+    public GameObject validateButton;
+    public GameObject okButton;
 
     public Question GetRandomQuestion()
     {
@@ -36,8 +40,11 @@ public class QuestionUtilities : MonoBehaviour
     {
         Question question = GetRandomQuestion();
         answersDict = new Dictionary<string, bool>();
+        selectedAnswers = new List<int>();
+        nbGoodAnswerSelected = 0;
+        nbGoodAnswerInQuestion = new System.Random().Next(1, (question.goodAnswer.Count) > 4 ? 4 : question.goodAnswer.Count+1);
         
-        int nbGoodAnswers = new System.Random().Next(1, (question.goodAnswer.Count) > 4 ? 4 : question.goodAnswer.Count+1);
+        int nbGoodAnswers = nbGoodAnswerInQuestion;
         for (int i = 0; i < 4; i++)
         {
             if (nbGoodAnswers > 0)
@@ -62,7 +69,6 @@ public class QuestionUtilities : MonoBehaviour
     public void DisplayQuestion(string question)
     {
         GameObject.Find("Question").GetComponent<TextMeshProUGUI>().text = question;
-        goodAnswer = new System.Random().Next(0, 4);
         answers = new List<TextMeshProUGUI>();
         answers.Add(GameObject.Find("AnswerTextA").GetComponent<TextMeshProUGUI>());
         answers.Add(GameObject.Find("AnswerTextB").GetComponent<TextMeshProUGUI>());
@@ -72,17 +78,36 @@ public class QuestionUtilities : MonoBehaviour
         int idx = 0;
         foreach (KeyValuePair<string, bool> kvp in answersDict)
         {
-            ColorBlock colors = answers[idx].transform.parent.GetComponent<Button>().colors;
-            colors.normalColor = Color.white;
-            colors.selectedColor = Color.white;
-            answers[idx].transform.parent.GetComponent<Button>().colors = colors;
-            
             answers[idx].text = kvp.Key;
             idx++;
         }
     }
 
-    public void CheckAnswer(int selectedAnswer)
+    public void ButtonAnswerManager(int idxSelected)
+    {
+        if (selectedAnswers.Contains(idxSelected))
+        {
+            ColorBlock colors = answers[idxSelected].transform.parent.GetComponent<Button>().colors;
+            colors.normalColor = Color.white;
+            colors.selectedColor = Color.white;
+            colors.highlightedColor = Color.white;
+            answers[idxSelected].transform.parent.GetComponent<Button>().colors = colors;
+            
+            selectedAnswers.Remove(idxSelected);
+        }
+        else
+        {
+            ColorBlock colors = answers[idxSelected].transform.parent.GetComponent<Button>().colors;
+            colors.normalColor = Color.cyan;
+            colors.selectedColor = Color.cyan;
+            colors.highlightedColor = Color.cyan;
+            answers[idxSelected].transform.parent.GetComponent<Button>().colors = colors;
+            
+            selectedAnswers.Add(idxSelected);
+        }
+    }
+
+    public void CheckAnswer()
     {
         for (int i = 0; i < 4; i++)
         {
@@ -90,35 +115,56 @@ public class QuestionUtilities : MonoBehaviour
             {
                 if (answers[i].text == kvp.Key)
                 {
+                    if (selectedAnswers.Contains(i))
+                        Debug.Log("idx: "+i+"answer: "+kvp.Key);
                     if (kvp.Value)
                     {
                         ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
                         colors.normalColor = Color.green;
                         colors.selectedColor = Color.green;
+                        colors.highlightedColor = Color.green;
                         answers[i].transform.parent.GetComponent<Button>().colors = colors;
+                        if (selectedAnswers.Contains(i))
+                            nbGoodAnswerSelected++;
                     }
                     else
                     {
                         ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
                         colors.normalColor = Color.red;
                         colors.selectedColor = Color.red;
+                        colors.highlightedColor = Color.red;
                         answers[i].transform.parent.GetComponent<Button>().colors = colors;
                     }
                 }
             }
         }
+        validateButton.SetActive(false);
+        okButton.SetActive(true);
+        
+        if (nbGoodAnswerSelected == nbGoodAnswerInQuestion)
+            Debug.Log("YEEEEEEEES");
     }
-    
+
     public void DisplayQuestionnaireMenu()
     {
         Time.timeScale = 0;
         questionnaireMenu.SetActive(true);
+        validateButton.SetActive(true);
+        okButton.SetActive(false);
     }
 
     public void HideQuestionnaireMenu()
     {
         questionnaireMenu.SetActive(false);
         Time.timeScale = 1;
+        for (int i = 0; i < 4; i++)
+        {
+            ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
+            colors.normalColor = Color.white;
+            colors.selectedColor = Color.white;
+            colors.highlightedColor = Color.white;
+            answers[i].transform.parent.GetComponent<Button>().colors = colors;
+        }
     }
 
     private void Start()
