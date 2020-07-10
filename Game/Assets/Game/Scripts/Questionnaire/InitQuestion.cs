@@ -19,11 +19,12 @@ public class InitQuestion : MonoBehaviour
                 "dhsj4qk78ds",
                 "prk8qwE1"
             },
-            BadAnswer = new List<string>()
+            badAnswer = new List<string>()
             {
                 "password1",
                 "Garfield2004",
                 "Th3B3$tP4$$w0rd",
+                "qwerty012345"
             }
         });
         allQuestion.Add(new Question()
@@ -32,12 +33,14 @@ public class InitQuestion : MonoBehaviour
             goodAnswer = new List<string>()
             {
                 "Borris:Uk)2020",
+                "kEnt:mSC#86"
             },
-            BadAnswer = new List<string>()
+            badAnswer = new List<string>()
             {
                 "Garfield2004",
                 "dsjE8k)djsk45",
                 "Th3B3$tP4$$w0rd",
+                "qwerty012345"
             }
         });
     }
