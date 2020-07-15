@@ -189,8 +189,8 @@ namespace Completed
 			else if(other.tag == "Food")
 			{
 				// TODO remove 2 next lines, just for test
-				GameObject.FindGameObjectWithTag("GameManager").GetComponent<QuestionUtilities>().DisplayQuestionnaireMenu();
-				GameObject.FindGameObjectWithTag("GameManager").GetComponent<QuestionUtilities>().PrepareQuestion();
+				GameObject.FindGameObjectWithTag("GameManager").GetComponent<InputQuestionUtilities>().DisplayInputQuestionMenu();
+				GameObject.FindGameObjectWithTag("GameManager").GetComponent<InputQuestionUtilities>().PrepareInputQuestion();
 				
 				//Add pointsPerFood to the players current food total.
 				food += pointsPerFood;
@@ -209,8 +209,10 @@ namespace Completed
 			else if(other.tag == "Soda")
 			{
 				// TODO remove 2 next lines, just for test
-				GameObject.FindGameObjectWithTag("GameManager").GetComponent<QuestionUtilities>().DisplayQuestionnaireMenu();
-				GameObject.FindGameObjectWithTag("GameManager").GetComponent<QuestionUtilities>().PrepareQuestion();
+				GameObject.FindGameObjectWithTag("GameManager").GetComponent<InputQuestionUtilities>().DisplayInputQuestionMenu();
+				GameObject.FindGameObjectWithTag("GameManager").GetComponent<InputQuestionUtilities>().PrepareInputQuestion();
+				// GameObject.FindGameObjectWithTag("GameManager").GetComponent<QuestionUtilities>().DisplayQuestionnaireMenu();
+				// GameObject.FindGameObjectWithTag("GameManager").GetComponent<QuestionUtilities>().PrepareQuestion();
 				
 				//Add pointsPerSoda to players food points total
 				food += pointsPerSoda;
