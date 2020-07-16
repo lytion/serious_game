@@ -46,5 +46,7 @@ public class Goal : MonoBehaviour
         audioSrc.Play();
         Destroy(other.gameObject);
         GameManager.instance.RestartGame(2.5f);
+        GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().DisplayInputQuestionMenu();
+        GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().PrepareInputQuestion();
     }
 }
