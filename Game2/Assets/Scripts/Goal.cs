@@ -14,9 +14,9 @@ public class Goal : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         audioSrc.Play();
-        Destroy(other.gameObject);
-        GameManager.instance.RestartGame(2.5f);
         GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().DisplayInputQuestionMenu();
         GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().PrepareInputQuestion();
+        Destroy(other.gameObject);
+        GameManager.instance.RestartGame(2.5f);
     }
 }
