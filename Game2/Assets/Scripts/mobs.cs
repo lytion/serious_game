@@ -19,9 +19,9 @@ public class mobs : MonoBehaviour
     }
     
     void Update()
-    { 
+    {
         Range = Vector2.Distance(transform.position, Player.transform.position);
-        if (Range <= 10f)
+        if (Range <= 4f)
          {
              transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speedMultiplier * Time.deltaTime);
          }
