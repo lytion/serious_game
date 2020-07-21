@@ -18,6 +18,8 @@ public class QuestionUtilities : MonoBehaviour
     public GameObject questionnaireMenu;
     public GameObject validateButton;
     public GameObject okButton;
+    private GameObject manager;
+    private int _enemyHealth;
 
     public Question GetRandomQuestion()
     {
@@ -142,7 +144,14 @@ public class QuestionUtilities : MonoBehaviour
         okButton.SetActive(true);
         
         if (nbGoodAnswerSelected == nbGoodAnswerInQuestion)
+        {
+            _enemyHealth -= 5;
             Debug.Log("YEEEEEEEES");
+        }
+        else
+        {
+            manager.GetComponent<GameData>().DecreasePlayerHealth(5);
+        }
     }
 
     public void DisplayQuestionnaireMenu()
@@ -167,8 +176,21 @@ public class QuestionUtilities : MonoBehaviour
         }
     }
 
+    public void StartBattle(int enemyHealth)
+    {
+        _enemyHealth = enemyHealth;
+        DisplayQuestionnaireMenu();
+        PrepareQuestion();
+        // while (_enemyHealth > 0 && manager.GetComponent<GameData>().GetPlayerHealth() > 0)
+        // {
+        //     DisplayQuestionnaireMenu();
+        //     PrepareQuestion();
+        // }
+    }
+
     private void Start()
     {
+        manager = GameObject.FindWithTag("GameManager");
         _initQuestion = GetComponent<InitQuestion>();
     }
 }
