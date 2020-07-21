@@ -3508,11 +3508,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd733ee4eab8bd14caf96e00ab09aa25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputQuestionnaireMenu: {fileID: 0}
-  validateButton: {fileID: 0}
-  okButton: {fileID: 0}
-  inputResult: {fileID: 0}
-  inputAnswer: {fileID: 0}
+  inputQuestionnaireMenu: {fileID: 996850055}
+  validateButton: {fileID: 1063410256}
+  okButton: {fileID: 806317057}
+  inputResult: {fileID: 1473740963}
+  inputAnswer: {fileID: 934288441}
 --- !u!114 &1180928165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3537,9 +3537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da340b0573ef04012884536e00ba7e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionnaireMenu: {fileID: 0}
-  validateButton: {fileID: 0}
-  okButton: {fileID: 0}
+  questionnaireMenu: {fileID: 97385581}
+  validateButton: {fileID: 544399661}
+  okButton: {fileID: 1575339240}
 --- !u!114 &1180928167
 MonoBehaviour:
   m_ObjectHideFlags: 0
