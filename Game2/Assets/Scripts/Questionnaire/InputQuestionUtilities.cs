@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputQuestionUtilities : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class InputQuestionUtilities : MonoBehaviour
     public GameObject inputAnswer;
     private List<Question> allQuestions;
     private string answer;
+    private string _nextScene;
 
     public Question GetRandomQuestion()
     {
@@ -42,6 +44,8 @@ public class InputQuestionUtilities : MonoBehaviour
         if (Equals(answer, playerAnswer))
         {
             inputResult.GetComponentInChildren<TextMeshProUGUI>().text = "Answer correct !";
+            HideInputQuestionnaireMenu();
+            SceneManager.LoadScene(_nextScene);
         }
         else
         {
@@ -64,6 +68,11 @@ public class InputQuestionUtilities : MonoBehaviour
     {
         Time.timeScale = 1;
         inputQuestionnaireMenu.SetActive(false);
+    }
+
+    public void SetNextScene(string scene)
+    {
+        _nextScene = scene;
     }
 
     private void Start()
