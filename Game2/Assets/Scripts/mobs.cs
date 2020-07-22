@@ -7,7 +7,7 @@ public class mobs : MonoBehaviour
     private Rigidbody2D rb2d;
     private GameObject Player;
     private float Range;
-    private int health = 10;
+    public int health = 10;
     private QuestionUtilities _questionUtilities;
 
     [SerializeField]
@@ -32,7 +32,8 @@ public class mobs : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("collide");
-            _questionUtilities.StartBattle(health);
+            _questionUtilities.SetEnemy(this, gameObject);
+            _questionUtilities.StartBattle();
             // GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().DisplayInputQuestionMenu();
             // GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().PrepareInputQuestion();
             // Destroy(other.gameObject);   
