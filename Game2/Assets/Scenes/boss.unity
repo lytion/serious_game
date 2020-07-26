@@ -1531,11 +1531,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593395296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 3.0066962, y: 2.1522353, z: -10}
-=======
   m_LocalPosition: {x: 2.7266512, y: 2.424235, z: -10}
->>>>>>> 93e783f11c1e2e8a13d550dbfaf319d71700d10f
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1803,7 +1800,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672794330}
   m_CullTransparentMesh: 0
-<<<<<<< HEAD
 --- !u!1 &721698970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,7 +1892,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-=======
 --- !u!1001 &716542017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2044,7 +2039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72a356bc108ebd4e86f21caedbba465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> 93e783f11c1e2e8a13d550dbfaf319d71700d10f
 --- !u!1 &757457104
 GameObject:
   m_ObjectHideFlags: 0
@@ -11854,11 +11848,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135443581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 3.0066962, y: 2.1522353, z: -10}
-=======
   m_LocalPosition: {x: 2.7266512, y: 2.424235, z: -10}
->>>>>>> 93e783f11c1e2e8a13d550dbfaf319d71700d10f
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1709324105}

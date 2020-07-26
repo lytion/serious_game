@@ -1,0 +1,136 @@
+Index: Library/EditorInstance.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Library/EditorInstance.json	(revision ff6c0c314e719f4cee172322085dba4d463b6dc6)
++++ Library/EditorInstance.json	(revision ff6c0c314e719f4cee172322085dba4d463b6dc6)
+@@ -1,6 +0,0 @@
+-{
+-	"process_id" : 72295,
+-	"version" : "2019.4.2f1",
+-	"app_path" : "/Applications/Unity/Hub/Editor/2019.4.2f1/Unity.app",
+-	"app_contents_path" : "/Applications/Unity/Hub/Editor/2019.4.2f1/Unity.app/Contents"
+-}
+\ No newline at end of file
+Index: Library/shadercompiler-UnityShaderCompiler6.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Base path: '/Applications/Unity/Hub/Editor/2019.4.2f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.2f1/PlaybackEngines'\nCmd: initializeCompiler\nCmd: compileSnippet\n  api=14 type=0 insize=28550 outsize=4081 kw=UNITY_PASS_DEFERRED ETC1_EXTERNAL_ALPHA PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Library/shadercompiler-UnityShaderCompiler6.log	(revision ff6c0c314e719f4cee172322085dba4d463b6dc6)
++++ Library/shadercompiler-UnityShaderCompiler6.log	(date 1595769046213)
+@@ -2,3 +2,5 @@
+ Cmd: initializeCompiler
+ Cmd: compileSnippet
+   api=14 type=0 insize=28550 outsize=4081 kw=UNITY_PASS_DEFERRED ETC1_EXTERNAL_ALPHA PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
++
++Quitting shader compiler process
+Index: Library/LastSceneManagerSetup.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>sceneSetups:\n- path: Assets/Scenes/Game.unity\n  isLoaded: 1\n  isActive: 1\n  isSubScene: 0\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Library/LastSceneManagerSetup.txt	(revision ff6c0c314e719f4cee172322085dba4d463b6dc6)
++++ Library/LastSceneManagerSetup.txt	(date 1595769045940)
+@@ -1,5 +1,5 @@
+ sceneSetups:
+-- path: Assets/Scenes/Game.unity
++- path: Assets/Scenes/boss.unity
+   isLoaded: 1
+   isActive: 1
+   isSubScene: 0
+Index: Library/shadercompiler-UnityShaderCompiler1.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Base path: '/Applications/Unity/Hub/Editor/2019.4.2f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.2f1/PlaybackEngines'\nCmd: initializeCompiler\nCmd: compileSnippet\n  api=14 type=0 insize=35398 outsize=5242 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH VERTEXLIGHT_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1\nCmd: compileSnippet\n  api=14 type=1 insize=26960 outsize=1910 kw=UNITY_PASS_PREPASSFINAL ETC1_EXTERNAL_ALPHA PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1\nCmd: compileSnippet\n  api=14 type=1 insize=5657 outsize=1538 kw=UNITY_UI_CLIP_RECT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Library/shadercompiler-UnityShaderCompiler1.log	(revision ff6c0c314e719f4cee172322085dba4d463b6dc6)
++++ Library/shadercompiler-UnityShaderCompiler1.log	(date 1595769046213)
+@@ -6,3 +6,5 @@
+   api=14 type=1 insize=26960 outsize=1910 kw=UNITY_PASS_PREPASSFINAL ETC1_EXTERNAL_ALPHA PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+ Cmd: compileSnippet
+   api=14 type=1 insize=5657 outsize=1538 kw=UNITY_UI_CLIP_RECT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
++
++Quitting shader compiler process
+Index: Library/shadercompiler-UnityShaderCompiler5.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Base path: '/Applications/Unity/Hub/Editor/2019.4.2f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.2f1/PlaybackEngines'\nCmd: initializeCompiler\nCmd: compileSnippet\n  api=14 type=0 insize=26960 outsize=4322 kw=UNITY_PASS_PREPASSFINAL ETC1_EXTERNAL_ALPHA PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1\nCmd: compileSnippet\n  api=14 type=0 insize=5657 outsize=6089 kw=UNITY_UI_CLIP_RECT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Library/shadercompiler-UnityShaderCompiler5.log	(revision ff6c0c314e719f4cee172322085dba4d463b6dc6)
++++ Library/shadercompiler-UnityShaderCompiler5.log	(date 1595769046213)
+@@ -4,3 +4,5 @@
+   api=14 type=0 insize=26960 outsize=4322 kw=UNITY_PASS_PREPASSFINAL ETC1_EXTERNAL_ALPHA PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+ Cmd: compileSnippet
+   api=14 type=0 insize=5657 outsize=6089 kw=UNITY_UI_CLIP_RECT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
++
++Quitting shader compiler process
+Index: Library/shadercompiler-UnityShaderCompiler9.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Base path: '/Applications/Unity/Hub/Editor/2019.4.2f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.2f1/PlaybackEngines'\nCmd: initializeCompiler\nCmd: compileSnippet\n  api=14 type=0 insize=28550 outsize=3853 kw=UNITY_PASS_DEFERRED pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Library/shadercompiler-UnityShaderCompiler9.log	(revision ff6c0c314e719f4cee172322085dba4d463b6dc6)
++++ Library/shadercompiler-UnityShaderCompiler9.log	(date 1595769046213)
+@@ -2,3 +2,5 @@
+ Cmd: initializeCompiler
+ Cmd: compileSnippet
+   api=14 type=0 insize=28550 outsize=3853 kw=UNITY_PASS_DEFERRED pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
++
++Quitting shader compiler process
+Index: Library/shadercompiler-UnityShaderCompiler7.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Base path: '/Applications/Unity/Hub/Editor/2019.4.2f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.2f1/PlaybackEngines'\nCmd: initializeCompiler\nCmd: compileSnippet\n  api=14 type=1 insize=28550 outsize=2001 kw=UNITY_PASS_DEFERRED ETC1_EXTERNAL_ALPHA PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Library/shadercompiler-UnityShaderCompiler7.log	(revision ff6c0c314e719f4cee172322085dba4d463b6dc6)
++++ Library/shadercompiler-UnityShaderCompiler7.log	(date 1595769046213)
+@@ -2,3 +2,5 @@
+ Cmd: initializeCompiler
+ Cmd: compileSnippet
+   api=14 type=1 insize=28550 outsize=2001 kw=UNITY_PASS_DEFERRED ETC1_EXTERNAL_ALPHA PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
++
++Quitting shader compiler process
+Index: Library/shadercompiler-UnityShaderCompiler3.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Base path: '/Applications/Unity/Hub/Editor/2019.4.2f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.2f1/PlaybackEngines'\nCmd: initializeCompiler\nCmd: compileSnippet\n  api=14 type=1 insize=2295 outsize=1050 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1\nCmd: compileSnippet\n  api=14 type=1 insize=26960 outsize=1481 kw=UNITY_PASS_PREPASSFINAL pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Library/shadercompiler-UnityShaderCompiler3.log	(revision ff6c0c314e719f4cee172322085dba4d463b6dc6)
++++ Library/shadercompiler-UnityShaderCompiler3.log	(date 1595769046213)
+@@ -4,3 +4,5 @@
+   api=14 type=1 insize=2295 outsize=1050 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
+ Cmd: compileSnippet
+   api=14 type=1 insize=26960 outsize=1481 kw=UNITY_PASS_PREPASSFINAL pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
++
++Quitting shader compiler process
+Index: Library/shadercompiler-UnityShaderCompiler2.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Base path: '/Applications/Unity/Hub/Editor/2019.4.2f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.2f1/PlaybackEngines'\nCmd: initializeCompiler\nCmd: compileSnippet\n  api=14 type=0 insize=35398 outsize=5474 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH VERTEXLIGHT_ON ETC1_EXTERNAL_ALPHA PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Library/shadercompiler-UnityShaderCompiler2.log	(revision ff6c0c314e719f4cee172322085dba4d463b6dc6)
++++ Library/shadercompiler-UnityShaderCompiler2.log	(date 1595769046213)
+@@ -2,3 +2,5 @@
+ Cmd: initializeCompiler
+ Cmd: compileSnippet
+   api=14 type=0 insize=35398 outsize=5474 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH VERTEXLIGHT_ON ETC1_EXTERNAL_ALPHA PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_RGBM_ENCODING ok=1
++
++Quitting shader compiler process
