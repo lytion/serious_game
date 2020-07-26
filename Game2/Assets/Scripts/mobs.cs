@@ -7,12 +7,15 @@ public class mobs : MonoBehaviour
     private Rigidbody2D rb2d;
     private GameObject Player;
     private float Range;
+    public int health = 10;
+    private QuestionUtilities _questionUtilities;
 
     [SerializeField]
     private float speedMultiplier;
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag ("Player");
+        _questionUtilities = GameObject.FindWithTag("GameManager").GetComponent<QuestionUtilities>();
     }
     
     void Update()
@@ -28,9 +31,12 @@ public class mobs : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().DisplayInputQuestionMenu();
-            GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().PrepareInputQuestion();
-            Destroy(other.gameObject);   
+            Debug.Log("collide");
+            _questionUtilities.SetEnemy(this, gameObject);
+            _questionUtilities.StartBattle();
+            // GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().DisplayInputQuestionMenu();
+            // GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().PrepareInputQuestion();
+            // Destroy(other.gameObject);   
         }
     }
 }

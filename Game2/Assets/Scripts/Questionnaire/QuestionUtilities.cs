@@ -18,6 +18,9 @@ public class QuestionUtilities : MonoBehaviour
     public GameObject questionnaireMenu;
     public GameObject validateButton;
     public GameObject okButton;
+    private GameObject manager;
+    private mobs _enemy;
+    private GameObject _enemyObject;
 
     public Question GetRandomQuestion()
     {
@@ -142,7 +145,14 @@ public class QuestionUtilities : MonoBehaviour
         okButton.SetActive(true);
         
         if (nbGoodAnswerSelected == nbGoodAnswerInQuestion)
+        {
+            _enemy.health -= 5;
             Debug.Log("YEEEEEEEES");
+        }
+        else
+        {
+            manager.GetComponent<GameData>().DecreasePlayerHealth(5);
+        }
     }
 
     public void DisplayQuestionnaireMenu()
@@ -165,10 +175,40 @@ public class QuestionUtilities : MonoBehaviour
             colors.highlightedColor = Color.white;
             answers[i].transform.parent.GetComponent<Button>().colors = colors;
         }
+        
+        if (!IsEndBattle())
+        {
+            StartBattle();
+        }
+        else
+        {
+            // TODO Check who lose
+            Destroy(_enemyObject);
+        }
+    }
+
+    public void SetEnemy(mobs mob, GameObject mobObject)
+    {
+        _enemy = mob;
+        _enemyObject = mobObject;
+    }
+
+    public void StartBattle()
+    {
+        DisplayQuestionnaireMenu();
+        PrepareQuestion();
+    }
+
+    public bool IsEndBattle()
+    {
+        if (_enemy.health > 0 && manager.GetComponent<GameData>().GetPlayerHealth() > 0)
+            return false;
+        return true;
     }
 
     private void Start()
     {
+        manager = GameObject.FindWithTag("GameManager");
         _initQuestion = GetComponent<InitQuestion>();
     }
 }
