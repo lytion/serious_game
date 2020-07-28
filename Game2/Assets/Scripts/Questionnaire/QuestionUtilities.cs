@@ -10,6 +10,7 @@ public class QuestionUtilities : MonoBehaviour
 {
     private InitQuestion _initQuestion;
     private List<Question> allQuestions;
+    private int questionIndex;
     private List<TextMeshProUGUI> answers;
     Dictionary<string, bool> answersDict;
     private List<int> selectedAnswers;
@@ -22,13 +23,93 @@ public class QuestionUtilities : MonoBehaviour
     private mobs _enemy;
     private GameObject _enemyObject;
 
+    public Question FindQuestion()
+    {
+        foreach (var a in allQuestions)
+        {
+            Debug.Log(a.question);
+            if (!a.hasAnswered)
+            {
+                _initQuestion.allQuestion[a.index].hasAnswered = true;
+                questionIndex = a.index;
+                return new Question{question = a.question,
+                    goodAnswer = new List<string>(a.goodAnswer), 
+                    badAnswer = new List<string>(a.badAnswer),
+                    hasAnsweredCorrectly = false,
+                    hasAnswered = false,
+                };
+            }
+        }
+
+        return GetNonCorrectAnsweredQuestion();
+    }
+
+    public Question GetNonCorrectAnsweredQuestion()
+    {
+        foreach (var a in allQuestions)
+        {
+            if (a.hasAnswered && !a.hasAnsweredCorrectly)
+            {
+                _initQuestion.allQuestion[a.index].hasAnswered = true;
+                questionIndex = a.index;
+                return new Question{question = a.question,
+                    goodAnswer = new List<string>(a.goodAnswer), 
+                    badAnswer = new List<string>(a.badAnswer),
+                    hasAnsweredCorrectly = false,
+                    hasAnswered = false,
+                };
+            }
+        }
+
+        return null;
+    }
+
+    public void ResetAnsweredQuestion()
+    {
+        bool nonCorrectAnswer = false;
+        Debug.Log(">>> All questions have been answered...");
+        foreach (var a in allQuestions)
+        {
+            if (a.hasAnswered && !a.hasAnsweredCorrectly)
+            {
+                nonCorrectAnswer = true;
+                _initQuestion.allQuestion[a.index].hasAnswered = false;
+                Debug.Log(">>> Questions reset!");
+            }
+        }
+
+        if (!nonCorrectAnswer)
+        {
+            Debug.Log(">>> All questions have been correctly answered...");
+            foreach (var a in allQuestions)
+            {
+                _initQuestion.allQuestion[a.index].hasAnswered = false;
+                _initQuestion.allQuestion[a.index].hasAnsweredCorrectly = false;
+            }
+            Debug.Log(">>> All questions have been reset!");
+        }
+    }
+    
     public Question GetRandomQuestion()
     {
         allQuestions = _initQuestion.GetAllQuestions();
-        int idx = new System.Random().Next(0, allQuestions.Count);
-        return new Question{question = allQuestions[idx].question,
-            goodAnswer = new List<string>(allQuestions[idx].goodAnswer), 
-            badAnswer = new List<string>(allQuestions[idx].badAnswer)};
+        allQuestions = allQuestions.OrderBy(x => Guid.NewGuid()).ToList();
+        Question questionPicked;
+        int nbQuestionAnswered = 0;
+        Debug.Log("initquestion");
+        foreach (var a in _initQuestion.GetAllQuestions())
+        {
+            Debug.Log(a.question);
+        }
+        Debug.Log("allQuestions");
+        questionPicked = FindQuestion();
+        if (questionPicked == null)
+        {
+            ResetAnsweredQuestion();
+            questionPicked = FindQuestion();
+        }
+        
+        return questionPicked;
     }
 
     void ShuffleAnswers()
@@ -147,6 +228,7 @@ public class QuestionUtilities : MonoBehaviour
         if (nbGoodAnswerSelected == nbGoodAnswerInQuestion)
         {
             _enemy.health -= 5;
+            _initQuestion.allQuestion[questionIndex].hasAnsweredCorrectly = true;
             Debug.Log("YEEEEEEEES");
         }
         else

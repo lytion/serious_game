@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InitQuestion : MonoBehaviour
 {
-    public static List<Question> allQuestion = new List<Question>();
+    public List<Question> allQuestion = new List<Question>();
 
     public List<Question> GetAllQuestions() { return allQuestion;}
 
@@ -25,7 +25,10 @@ public class InitQuestion : MonoBehaviour
                 "Garfield2004",
                 "Th3B3$tP4$$w0rd",
                 "qwerty012345"
-            }
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 0,
         });
         allQuestion.Add(new Question()
         {
@@ -41,7 +44,30 @@ public class InitQuestion : MonoBehaviour
                 "dsjE8k)djsk45",
                 "Th3B3$tP4$$w0rd",
                 "qwerty012345"
-            }
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 1,
+        });
+        allQuestion.Add(new Question()
+        {
+            question = "Which of these passwords is weak?",
+            goodAnswer = new List<string>()
+            {
+                "myOwlHedw1ge",
+                "admin",
+                "PeteR99",
+                "B7s0"
+            },
+            badAnswer = new List<string>()
+            {
+                "kEnt:mSC#86",
+                "dsjE8k)djsk45",
+                "7C4kE-mm3&_E"
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 2,
         });
     }
 }
