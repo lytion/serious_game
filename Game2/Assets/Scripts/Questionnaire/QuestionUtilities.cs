@@ -178,9 +178,9 @@ public class QuestionUtilities : MonoBehaviour
         if (selectedAnswers.Contains(idxSelected))
         {
             ColorBlock colors = answers[idxSelected].transform.parent.GetComponent<Button>().colors;
-            colors.normalColor = Color.white;
-            colors.selectedColor = Color.white;
-            colors.highlightedColor = Color.white;
+            colors.normalColor = new Color32(24, 24, 24, 255);
+            colors.selectedColor = new Color32(24, 24, 24, 255);
+            colors.highlightedColor = new Color32(70, 70, 70, 255);
             answers[idxSelected].transform.parent.GetComponent<Button>().colors = colors;
             
             selectedAnswers.Remove(idxSelected);
@@ -188,9 +188,9 @@ public class QuestionUtilities : MonoBehaviour
         else
         {
             ColorBlock colors = answers[idxSelected].transform.parent.GetComponent<Button>().colors;
-            colors.normalColor = Color.cyan;
-            colors.selectedColor = Color.cyan;
-            colors.highlightedColor = Color.cyan;
+            colors.normalColor = new Color32(70, 70, 70, 255);
+            colors.selectedColor = new Color32(70, 70, 70, 255);
+            colors.highlightedColor = new Color32(24, 24, 24, 255);
             answers[idxSelected].transform.parent.GetComponent<Button>().colors = colors;
             
             selectedAnswers.Add(idxSelected);
@@ -210,20 +210,24 @@ public class QuestionUtilities : MonoBehaviour
                     if (kvp.Value)
                     {
                         ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
-                        colors.normalColor = Color.green;
-                        colors.selectedColor = Color.green;
-                        colors.highlightedColor = Color.green;
+                        colors.normalColor = new Color32(41, 158, 41, 255);
+                        colors.selectedColor = new Color32(41, 158, 41, 255);
+                        colors.highlightedColor = new Color32(41, 158, 41, 255);
+                        colors.disabledColor = new Color32(41, 158, 41, 255);
                         answers[i].transform.parent.GetComponent<Button>().colors = colors;
+                        answers[i].transform.parent.GetComponent<Button>().interactable = false;
                         if (selectedAnswers.Contains(i))
                             nbGoodAnswerSelected++;
                     }
                     else
                     {
                         ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
-                        colors.normalColor = Color.red;
-                        colors.selectedColor = Color.red;
-                        colors.highlightedColor = Color.red;
+                        colors.normalColor = new Color32(143, 31, 31, 255);
+                        colors.selectedColor = new Color32(143, 31, 31, 255);
+                        colors.highlightedColor = new Color32(143, 31, 31, 255);
+                        colors.disabledColor = new Color32(143, 31, 31, 255);
                         answers[i].transform.parent.GetComponent<Button>().colors = colors;
+                        answers[i].transform.parent.GetComponent<Button>().interactable = false;
                     }
                 }
             }
@@ -262,10 +266,11 @@ public class QuestionUtilities : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
-            colors.normalColor = Color.white;
-            colors.selectedColor = Color.white;
-            colors.highlightedColor = Color.white;
+            colors.normalColor = new Color32(24, 24, 24, 255);
+            colors.selectedColor = new Color32(70, 70, 70, 255);
+            colors.highlightedColor = new Color32(70, 70, 70, 255);
             answers[i].transform.parent.GetComponent<Button>().colors = colors;
+            answers[i].transform.parent.GetComponent<Button>().interactable = true;
         }
         
         if (!IsEndBattle())
@@ -315,6 +320,8 @@ public class QuestionUtilities : MonoBehaviour
             manager.GetComponent<GameData>().GetPlayerHealth() > 0)
             return false;
         if (_enemyType == "chest" && _chest != null && _chest.health > 0)
+            return false;
+        if (_enemyType == "door" && nbGoodAnswerSelected != nbGoodAnswerInQuestion)
             return false;
         return true;
     }
