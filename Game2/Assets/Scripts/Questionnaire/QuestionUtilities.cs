@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class QuestionUtilities : MonoBehaviour
 {
@@ -20,8 +21,12 @@ public class QuestionUtilities : MonoBehaviour
     public GameObject validateButton;
     public GameObject okButton;
     private GameObject manager;
+
+    private string _enemyType;
+    private Goal _door;
     private mobs _enemy;
     private GameObject _enemyObject;
+    private string _nextScene;
 
     public Question FindQuestion()
     {
@@ -227,7 +232,8 @@ public class QuestionUtilities : MonoBehaviour
         
         if (nbGoodAnswerSelected == nbGoodAnswerInQuestion)
         {
-            _enemy.health -= 5;
+            if (_enemyType == "mob")
+                _enemy.health -= 5;
             _initQuestion.allQuestion[questionIndex].hasAnsweredCorrectly = true;
             Debug.Log("YEEEEEEEES");
         }
@@ -264,15 +270,27 @@ public class QuestionUtilities : MonoBehaviour
         }
         else
         {
+            if (_enemyType == "door")
+                SceneManager.LoadScene(_nextScene);
             // TODO Check who lose
             Destroy(_enemyObject);
         }
+    }
+
+    public void SetEnemyType(string type)
+    {
+        _enemyType = type;
     }
 
     public void SetEnemy(mobs mob, GameObject mobObject)
     {
         _enemy = mob;
         _enemyObject = mobObject;
+    }
+    
+    public void SetNextScene(string scene)
+    {
+        _nextScene = scene;
     }
 
     public void StartBattle()
@@ -283,7 +301,8 @@ public class QuestionUtilities : MonoBehaviour
 
     public bool IsEndBattle()
     {
-        if (_enemy.health > 0 && manager.GetComponent<GameData>().GetPlayerHealth() > 0)
+        if (_enemyType == "mob" && _enemy != null && _enemy.health > 0 && 
+            manager.GetComponent<GameData>().GetPlayerHealth() > 0)
             return false;
         return true;
     }

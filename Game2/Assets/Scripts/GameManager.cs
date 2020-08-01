@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     {
         audioSrc = GetComponent<AudioSource>();
         instance = this;
+        // Dont destroy gameManager and Canvas to keep current health between levels
+        // and the questionnaire
+        DontDestroyOnLoad(transform.gameObject);
+        DontDestroyOnLoad(GameObject.Find("Canvas"));
     }
 
     public void RestartGame(float delay)

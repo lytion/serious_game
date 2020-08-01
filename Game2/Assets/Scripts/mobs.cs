@@ -32,6 +32,7 @@ public class mobs : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("collide");
+            _questionUtilities.SetEnemyType("mob");
             _questionUtilities.SetEnemy(this, gameObject);
             _questionUtilities.StartBattle();
             // GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().DisplayInputQuestionMenu();
