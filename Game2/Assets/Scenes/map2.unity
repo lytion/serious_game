@@ -41889,6 +41889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ddff633d7ea4f9fbdea3c254bd34b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
 --- !u!61 &1108661749
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42643,6 +42644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ddff633d7ea4f9fbdea3c254bd34b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
 --- !u!61 &1331342267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43939,7 +43941,7 @@ GameObject:
   - component: {fileID: 1637804001}
   - component: {fileID: 1637804000}
   m_Layer: 0
-  m_Name: chest (1)
+  m_Name: chest
   m_TagString: chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43957,6 +43959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ddff633d7ea4f9fbdea3c254bd34b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
 --- !u!61 &1637804001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58278,6 +58281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ddff633d7ea4f9fbdea3c254bd34b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
 --- !u!61 &1967054758
 BoxCollider2D:
   m_ObjectHideFlags: 0

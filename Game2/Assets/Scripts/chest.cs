@@ -1,16 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class chest : MonoBehaviour
 {
+    private QuestionUtilities _questionUtilities;
+    public int health;
+
+    private void Awake()
+    {
+        _questionUtilities = GameObject.FindWithTag("GameManager").GetComponent<QuestionUtilities>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().DisplayInputQuestionMenu();
-            GameObject.FindWithTag("GameManager").GetComponent<InputQuestionUtilities>().PrepareInputQuestion();
-            Destroy(other.gameObject);   
+            _questionUtilities.SetEnemyType("chest");
+            _questionUtilities.SetChest(this, gameObject);
+            _questionUtilities.StartBattle();
         }
     }
 }

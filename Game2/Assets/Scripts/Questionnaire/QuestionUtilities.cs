@@ -24,6 +24,7 @@ public class QuestionUtilities : MonoBehaviour
 
     private string _enemyType;
     private Goal _door;
+    private chest _chest;
     private mobs _enemy;
     private GameObject _enemyObject;
     private string _nextScene;
@@ -234,12 +235,15 @@ public class QuestionUtilities : MonoBehaviour
         {
             if (_enemyType == "mob")
                 _enemy.health -= 5;
+            else if (_enemyType == "chest")
+                _chest.health -= 5;
             _initQuestion.allQuestion[questionIndex].hasAnsweredCorrectly = true;
             Debug.Log("YEEEEEEEES");
         }
         else
         {
-            manager.GetComponent<GameData>().DecreasePlayerHealth(5);
+            if (_enemyType == "mob")
+                manager.GetComponent<GameData>().DecreasePlayerHealth(5);
         }
     }
 
@@ -287,6 +291,12 @@ public class QuestionUtilities : MonoBehaviour
         _enemy = mob;
         _enemyObject = mobObject;
     }
+
+    public void SetChest(chest chest, GameObject chestObject)
+    {
+        _chest = chest;
+        _enemyObject = chestObject;
+    }
     
     public void SetNextScene(string scene)
     {
@@ -303,6 +313,8 @@ public class QuestionUtilities : MonoBehaviour
     {
         if (_enemyType == "mob" && _enemy != null && _enemy.health > 0 && 
             manager.GetComponent<GameData>().GetPlayerHealth() > 0)
+            return false;
+        if (_enemyType == "chest" && _chest != null && _chest.health > 0)
             return false;
         return true;
     }
