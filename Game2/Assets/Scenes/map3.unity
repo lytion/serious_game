@@ -39456,7 +39456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290143043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0044599, y: 2.1522353, z: -10}
+  m_LocalPosition: {x: 3.0096073, y: 2.1522353, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 594330784}
@@ -42474,7 +42474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802838044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0044599, y: 2.1522353, z: -10}
+  m_LocalPosition: {x: 3.0096073, y: 2.1522353, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58550,9 +58550,6 @@ GameObject:
   - component: {fileID: 1665796612}
   - component: {fileID: 1665796611}
   - component: {fileID: 1665796610}
-  - component: {fileID: 1665796609}
-  - component: {fileID: 1665796608}
-  - component: {fileID: 1665796607}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -58560,48 +58557,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1665796607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665796606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6eb1f2a27824756b5e39762e2bdb48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 1560892066}
---- !u!114 &1665796608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665796606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd733ee4eab8bd14caf96e00ab09aa25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputQuestionnaireMenu: {fileID: 1396362163}
-  validateButton: {fileID: 290945936}
-  okButton: {fileID: 1530327203}
-  inputResult: {fileID: 1137795644}
-  inputAnswer: {fileID: 1679281800}
---- !u!114 &1665796609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665796606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628c8c2585c1d7749bb7ae7d78c9fb14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1665796610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60134,6 +60089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db94bdf1fc5ab84d81de58bba17292f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: boss
 --- !u!82 &1946484218
 AudioSource:
   m_ObjectHideFlags: 0

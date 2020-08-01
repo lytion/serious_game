@@ -7,6 +7,7 @@ public class Goal : MonoBehaviour
 {
     private AudioSource audioSrc;
     private QuestionUtilities _questionUtilities;
+    public string nextScene;
 
     void Awake()
     {
@@ -19,7 +20,7 @@ public class Goal : MonoBehaviour
     {
         audioSrc.Play();
         _questionUtilities.SetEnemyType("door");
-        _questionUtilities.SetNextScene("boss");
+        _questionUtilities.SetNextScene(nextScene);
         _questionUtilities.StartBattle();
     }
 }
