@@ -58,6 +58,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="chest.cs" t="Include" />
+          <e p="DropSystem.cs" t="Include" />
           <e p="Editor" t="Include">
             <e p="PrefabBrush.cs" t="Include" />
           </e>
@@ -67,6 +68,7 @@
           <e p="Goal.cs" t="Include" />
           <e p="Hazard.cs" t="Include" />
           <e p="HealthBar.cs" t="Include" />
+          <e p="Item.cs" t="Include" />
           <e p="Menu" t="Include">
             <e p="LauchGame.cs" t="Include" />
           </e>

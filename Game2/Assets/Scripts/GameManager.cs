@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         // and the questionnaire
         DontDestroyOnLoad(transform.gameObject);
         DontDestroyOnLoad(GameObject.Find("Canvas"));
+        DontDestroyOnLoad(GameObject.Find("Items"));
     }
 
     public void RestartGame(float delay)

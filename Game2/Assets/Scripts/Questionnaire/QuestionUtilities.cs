@@ -21,6 +21,7 @@ public class QuestionUtilities : MonoBehaviour
     public GameObject validateButton;
     public GameObject okButton;
     private GameObject manager;
+    private DropSystem _dropSystem;
 
     private string _enemyType;
     private Goal _door;
@@ -33,7 +34,6 @@ public class QuestionUtilities : MonoBehaviour
     {
         foreach (var a in allQuestions)
         {
-            Debug.Log(a.question);
             if (!a.hasAnswered)
             {
                 _initQuestion.allQuestion[a.index].hasAnswered = true;
@@ -102,12 +102,6 @@ public class QuestionUtilities : MonoBehaviour
         allQuestions = allQuestions.OrderBy(x => Guid.NewGuid()).ToList();
         Question questionPicked;
         int nbQuestionAnswered = 0;
-        Debug.Log("initquestion");
-        foreach (var a in _initQuestion.GetAllQuestions())
-        {
-            Debug.Log(a.question);
-        }
-        Debug.Log("allQuestions");
         questionPicked = FindQuestion();
         if (questionPicked == null)
         {
@@ -206,7 +200,7 @@ public class QuestionUtilities : MonoBehaviour
                 if (answers[i].text == kvp.Key)
                 {
                     if (selectedAnswers.Contains(i))
-                        Debug.Log("idx: "+i+"answer: "+kvp.Key);
+                        Debug.Log(">>> idx: "+i+"answer: "+kvp.Key);
                     if (kvp.Value)
                     {
                         ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
@@ -238,11 +232,10 @@ public class QuestionUtilities : MonoBehaviour
         if (nbGoodAnswerSelected == nbGoodAnswerInQuestion)
         {
             if (_enemyType == "mob")
-                _enemy.health -= 5;
+                _enemy.health -= manager.GetComponent<GameData>().GetPlayerAtk();
             else if (_enemyType == "chest")
-                _chest.health -= 5;
+                _chest.health -= manager.GetComponent<GameData>().GetPlayerAtk();
             _initQuestion.allQuestion[questionIndex].hasAnsweredCorrectly = true;
-            Debug.Log("YEEEEEEEES");
         }
         else
         {
@@ -280,7 +273,14 @@ public class QuestionUtilities : MonoBehaviour
         else
         {
             if (_enemyType == "door")
+            {
+                _dropSystem.keyFound = false;
                 SceneManager.LoadScene(_nextScene);
+            }
+            else if (_enemyType == "chest")
+            {
+                _dropSystem.DropItem(_dropSystem.GetAllChests());
+            }
             // TODO Check who lose
             Destroy(_enemyObject);
         }
@@ -330,5 +330,6 @@ public class QuestionUtilities : MonoBehaviour
     {
         manager = GameObject.FindWithTag("GameManager");
         _initQuestion = GetComponent<InitQuestion>();
+        _dropSystem = manager.GetComponent<DropSystem>();
     }
 }
