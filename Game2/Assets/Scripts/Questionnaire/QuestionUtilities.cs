@@ -163,6 +163,11 @@ public class QuestionUtilities : MonoBehaviour
         foreach (KeyValuePair<string, bool> kvp in answersDict)
         {
             answers[idx].text = kvp.Key;
+            // ColorBlock colors = answers[idx].transform.parent.GetComponent<Button>().colors;
+            // colors.normalColor = new Color32(24, 24, 24, 255);
+            // colors.selectedColor = new Color32(70, 70, 70, 255);
+            // colors.highlightedColor = new Color32(70, 70, 70, 255);
+            // answers[idx].transform.parent.GetComponent<Button>().colors = colors;
             idx++;
         }
     }
@@ -171,21 +176,24 @@ public class QuestionUtilities : MonoBehaviour
     {
         if (selectedAnswers.Contains(idxSelected))
         {
-            ColorBlock colors = answers[idxSelected].transform.parent.GetComponent<Button>().colors;
-            colors.normalColor = new Color32(24, 24, 24, 255);
-            colors.selectedColor = new Color32(24, 24, 24, 255);
-            colors.highlightedColor = new Color32(70, 70, 70, 255);
-            answers[idxSelected].transform.parent.GetComponent<Button>().colors = colors;
+            // ColorBlock colors = answers[idxSelected].transform.parent.GetComponent<Button>().colors;
+            // colors.normalColor = new Color32(24, 24, 24, 255);
+            // colors.selectedColor = new Color32(24, 24, 24, 255);
+            // colors.highlightedColor = new Color32(70, 70, 70, 255);
+            Color unpickedColor = new Color(0.09019608f, 0.09019608f, 0.09019608f);
+            answers[idxSelected].transform.parent.parent.GetComponent<Image>().color = unpickedColor;
+            // answers[idxSelected].transform.parent.GetComponent<Button>().colors = colors;
             
             selectedAnswers.Remove(idxSelected);
         }
         else
         {
-            ColorBlock colors = answers[idxSelected].transform.parent.GetComponent<Button>().colors;
-            colors.normalColor = new Color32(70, 70, 70, 255);
-            colors.selectedColor = new Color32(70, 70, 70, 255);
-            colors.highlightedColor = new Color32(24, 24, 24, 255);
-            answers[idxSelected].transform.parent.GetComponent<Button>().colors = colors;
+            // ColorBlock colors = answers[idxSelected].transform.parent.GetComponent<Button>().colors;
+            // colors.normalColor = new Color32(70, 70, 70, 255);
+            // colors.selectedColor = new Color32(70, 70, 70, 255);
+            // colors.highlightedColor = new Color32(24, 24, 24, 255);
+            Color pickedColor = new Color(1f, 0.7803922f, 0.3411f);
+            answers[idxSelected].transform.parent.parent.GetComponent<Image>().color = pickedColor;
             
             selectedAnswers.Add(idxSelected);
         }
@@ -204,10 +212,10 @@ public class QuestionUtilities : MonoBehaviour
                     if (kvp.Value)
                     {
                         ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
-                        colors.normalColor = new Color32(41, 158, 41, 255);
-                        colors.selectedColor = new Color32(41, 158, 41, 255);
-                        colors.highlightedColor = new Color32(41, 158, 41, 255);
-                        colors.disabledColor = new Color32(41, 158, 41, 255);
+                        colors.normalColor = new Color32(11, 109, 11, 255);
+                        colors.selectedColor = new Color32(11, 109, 11, 255);
+                        colors.highlightedColor = new Color32(11, 109, 11, 255);
+                        colors.disabledColor = new Color32(11, 109, 11, 255);
                         answers[i].transform.parent.GetComponent<Button>().colors = colors;
                         answers[i].transform.parent.GetComponent<Button>().interactable = false;
                         if (selectedAnswers.Contains(i))
@@ -215,13 +223,20 @@ public class QuestionUtilities : MonoBehaviour
                     }
                     else
                     {
-                        ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
-                        colors.normalColor = new Color32(143, 31, 31, 255);
-                        colors.selectedColor = new Color32(143, 31, 31, 255);
-                        colors.highlightedColor = new Color32(143, 31, 31, 255);
-                        colors.disabledColor = new Color32(143, 31, 31, 255);
-                        answers[i].transform.parent.GetComponent<Button>().colors = colors;
-                        answers[i].transform.parent.GetComponent<Button>().interactable = false;
+                        if (selectedAnswers.Contains(i))
+                        {
+                            ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
+                            colors.normalColor = new Color32(143, 31, 31, 255);
+                            colors.selectedColor = new Color32(143, 31, 31, 255);
+                            colors.highlightedColor = new Color32(143, 31, 31, 255);
+                            colors.disabledColor = new Color32(143, 31, 31, 255);
+                            answers[i].transform.parent.GetComponent<Button>().colors = colors;
+                            answers[i].transform.parent.GetComponent<Button>().interactable = false;
+                        }
+                        else
+                        {
+                            answers[i].transform.parent.parent.gameObject.SetActive(false);
+                        }
                     }
                 }
             }
@@ -264,6 +279,10 @@ public class QuestionUtilities : MonoBehaviour
             colors.highlightedColor = new Color32(70, 70, 70, 255);
             answers[i].transform.parent.GetComponent<Button>().colors = colors;
             answers[i].transform.parent.GetComponent<Button>().interactable = true;
+            
+            Color unpickedColor = new Color(0.09019608f, 0.09019608f, 0.09019608f);
+            answers[i].transform.parent.parent.GetComponent<Image>().color = unpickedColor;
+            answers[i].transform.parent.parent.gameObject.SetActive(true);
         }
         
         if (!IsEndBattle())
