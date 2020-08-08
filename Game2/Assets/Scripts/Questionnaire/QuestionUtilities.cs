@@ -15,11 +15,13 @@ public class QuestionUtilities : MonoBehaviour
     private List<TextMeshProUGUI> answers;
     Dictionary<string, bool> answersDict;
     private List<int> selectedAnswers;
+    private string _explanationText;
     private int nbGoodAnswerInQuestion;
     private int nbGoodAnswerSelected;
     public GameObject questionnaireMenu;
     public GameObject validateButton;
     public GameObject okButton;
+    public GameObject ExplanationContainer;
     private GameObject manager;
     private DropSystem _dropSystem;
 
@@ -41,6 +43,7 @@ public class QuestionUtilities : MonoBehaviour
                 return new Question{question = a.question,
                     goodAnswer = new List<string>(a.goodAnswer), 
                     badAnswer = new List<string>(a.badAnswer),
+                    explanation = new List<string>(a.explanation),
                     hasAnsweredCorrectly = false,
                     hasAnswered = false,
                 };
@@ -61,6 +64,7 @@ public class QuestionUtilities : MonoBehaviour
                 return new Question{question = a.question,
                     goodAnswer = new List<string>(a.goodAnswer), 
                     badAnswer = new List<string>(a.badAnswer),
+                    explanation = new List<string>(a.explanation),
                     hasAnsweredCorrectly = false,
                     hasAnswered = false,
                 };
@@ -126,7 +130,7 @@ public class QuestionUtilities : MonoBehaviour
         answersDict = new Dictionary<string, bool>();
         selectedAnswers = new List<int>();
         nbGoodAnswerSelected = 0;
-        nbGoodAnswerInQuestion = new System.Random().Next(1, (question.goodAnswer.Count) > 4 ? 4 : question.goodAnswer.Count+1);
+        nbGoodAnswerInQuestion = 1;
         
         int nbGoodAnswers = nbGoodAnswerInQuestion;
         for (int i = 0; i < 4; i++)
@@ -135,6 +139,10 @@ public class QuestionUtilities : MonoBehaviour
             {
                 int idxGoodAnswer = new System.Random().Next(0, question.goodAnswer.Count);
                 answersDict.Add(question.goodAnswer[idxGoodAnswer], true);
+                _explanationText = question.explanation[idxGoodAnswer];
+                _explanationText = _explanationText.Replace("#", question.goodAnswer[idxGoodAnswer]);
+                ExplanationContainer.transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text =
+                    _explanationText;
                 question.goodAnswer.RemoveAt(idxGoodAnswer);
                 nbGoodAnswers--;
             }
@@ -242,7 +250,6 @@ public class QuestionUtilities : MonoBehaviour
             }
         }
         validateButton.SetActive(false);
-        okButton.SetActive(true);
         
         if (nbGoodAnswerSelected == nbGoodAnswerInQuestion)
         {
@@ -251,11 +258,13 @@ public class QuestionUtilities : MonoBehaviour
             else if (_enemyType == "chest")
                 _chest.health -= manager.GetComponent<GameData>().GetPlayerAtk();
             _initQuestion.allQuestion[questionIndex].hasAnsweredCorrectly = true;
+            okButton.SetActive(true);
         }
         else
         {
             if (_enemyType == "mob")
                 manager.GetComponent<GameData>().DecreasePlayerHealth(5);
+            ExplanationContainer.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 
@@ -265,6 +274,8 @@ public class QuestionUtilities : MonoBehaviour
         questionnaireMenu.SetActive(true);
         validateButton.SetActive(true);
         okButton.SetActive(false);
+        ExplanationContainer.transform.GetChild(1).gameObject.SetActive(false);
+        ExplanationContainer.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void HideQuestionnaireMenu()
@@ -303,6 +314,13 @@ public class QuestionUtilities : MonoBehaviour
             // TODO Check who lose
             Destroy(_enemyObject);
         }
+    }
+
+    public void DisplayExplanation()
+    {
+        ExplanationContainer.transform.GetChild(1).gameObject.SetActive(false);
+        ExplanationContainer.transform.GetChild(0).gameObject.SetActive(true);
+        okButton.SetActive(true);
     }
 
     public void SetEnemyType(string type)
