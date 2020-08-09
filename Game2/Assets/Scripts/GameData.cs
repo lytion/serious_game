@@ -24,10 +24,13 @@ public class GameData : MonoBehaviour
     }
     public void DecreasePlayerHealth(int hp)
     {
-        _playerHealth -= hp;
-        if (_playerHealth <= 0)
+        if (_playerHealth - hp <= 0)
             GameManager.instance.RestartGame(2.5f);
-        healthBar.SetHealth(_playerHealth);
+        else
+        {
+            _playerHealth -= hp;
+            healthBar.SetHealth(_playerHealth);   
+        }
     }
     
     private static int _playerAtk = 5;
