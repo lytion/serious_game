@@ -16,8 +16,8 @@ public class InitQuestion : MonoBehaviour
             question = "Which of these passwords is the more secure?",
             goodAnswer = new List<string>()
             {
-                "dhsj4qk78ds",
-                "prk8qwE1"
+                "dHsj4_k78ds",
+                "prk8q&wE1"
             },
             badAnswer = new List<string>()
             {
@@ -25,6 +25,11 @@ public class InitQuestion : MonoBehaviour
                 "Garfield2004",
                 "Th3B3$tP4$$w0rd",
                 "qwerty012345"
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer because it has more than 8 characters length, has lower and upper case, digits and special characters",
+                "'#' is the correct answer because it has more than 8 characters length, has lower and upper case, digits and special characters",
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
@@ -45,6 +50,13 @@ public class InitQuestion : MonoBehaviour
                 "Th3B3$tP4$$w0rd",
                 "qwerty012345"
             },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer because it has more than 8 characters length, has lower and upper case, digits and special characters" +
+                "but also because it contains some word that is easy to remember.",
+                "'#' is the correct answer because it has more than 8 characters length, has lower and upper case, digits and special characters" +
+                "but also because it contains some word that is easy to remember.",
+            },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
             index = 1,
@@ -64,6 +76,13 @@ public class InitQuestion : MonoBehaviour
                 "kEnt:mSC#86",
                 "dsjE8k)djsk45",
                 "7C4kE-mm3&_E"
+            },
+            explanation = new List<string>()
+            {
+              "'#' is the correct answer because it can be found easily by searching information about you on social network ofr example.",
+              "'#' is the correct answer because it is one of the password hackers try first.",
+              "'#' is the correct answer because it can be found easily by searching information about you on social network ofr example.",
+              "'#' is the correct answer because the length of the password is too short and can be found easily by a brute force attack."
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
