@@ -1406,7 +1406,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593395296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0096073, y: 2.1522353, z: -10}
+  m_LocalPosition: {x: 3.0058367, y: 2.1522353, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2286,6 +2286,7 @@ MonoBehaviour:
   questionnaireMenu: {fileID: 97385581}
   validateButton: {fileID: 544399661}
   okButton: {fileID: 1575339240}
+  ExplanationContainer: {fileID: 0}
 --- !u!114 &808698961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7478,7 +7479,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0000003874302}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7489,7 +7490,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9375, y: 1.1875}
+  m_Size: {x: 1.2070119, y: 1.7586281}
   m_EdgeRadius: 0
 --- !u!82 &1761253888
 AudioSource:
@@ -10451,7 +10452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135443581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0096073, y: 2.1522353, z: -10}
+  m_LocalPosition: {x: 3.0058367, y: 2.1522353, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1709324105}
