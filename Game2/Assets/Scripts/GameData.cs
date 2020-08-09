@@ -44,9 +44,22 @@ public class GameData : MonoBehaviour
     {
         _playerAtk = atk;
     }
-    
+
+    private static string _introToNextScene;
+
+    public string GetIntroToNextScene()
+    {
+        return _introToNextScene;
+    }
+
+    public void SetIntroToNextScene(string scene)
+    {
+        _introToNextScene = scene;
+    }
+
     public void Start()
     {
-        healthBar.SetMaxHealth(_playerMaxHealth);
+        if (healthBar)
+            healthBar.SetMaxHealth(_playerMaxHealth);
     }
 }

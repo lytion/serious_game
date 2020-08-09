@@ -13,7 +13,11 @@ public class Goal : MonoBehaviour
     {
         audioSrc = GetComponent<AudioSource>();
         _questionUtilities = GameObject.FindWithTag("GameManager").GetComponent<QuestionUtilities>();
-
+        if (GameObject.Find("GameManagerMenu"))
+        {
+            nextScene = GameObject.Find("GameManagerMenu").GetComponent<GameData>().GetIntroToNextScene();
+            Destroy(GameObject.Find("GameManagerMenu"));
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
