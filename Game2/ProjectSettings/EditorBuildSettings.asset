@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 140cecb5de90ac5479f4a856756a60c5
   - enabled: 1
-    path: Assets/Scenes/Intro1_map1.unity
+    path: Assets/Scenes/Intro1_map.unity
     guid: 067d8f5c578074a99ab985ab2d492d32
   - enabled: 1
-    path: Assets/Scenes/Intro1_map2.unity
+    path: Assets/Scenes/Intro2_map.unity
     guid: a2af52bdc500b4493b9d749da76a4fe8
   - enabled: 1
-    path: Assets/Scenes/Intro1_map3.unity
+    path: Assets/Scenes/Risk_map.unity
     guid: a325cba60106847a4b6453b47222b443
   - enabled: 1
     path: Assets/Scenes/Intro1_boss.unity

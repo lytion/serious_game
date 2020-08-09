@@ -2529,6 +2529,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OKButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8840621093882897039, guid: 86c5f19b4ae872b4691cd7e73aaec449,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86c5f19b4ae872b4691cd7e73aaec449, type: 3}
 --- !u!224 &8834572368004354547 stripped

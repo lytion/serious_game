@@ -8,11 +8,19 @@ public class LauchGame : MonoBehaviour
 {
     public void LaunchIntroOne()
     {
-        SceneManager.LoadScene("Intro1_map1");
+        GameObject.Find("GameManagerMenu").GetComponent<GameData>().SetIntroToNextScene("intro1_map");
+        SceneManager.LoadScene("Game");
+    }
+
+    public void LaunchIntroTwo()
+    {
+        GameObject.Find("GameManagerMenu").GetComponent<GameData>().SetIntroToNextScene("intro2_map");
+        SceneManager.LoadScene("Game");
     }
 
     public void Start()
     {
+        DontDestroyOnLoad(GameObject.Find("GameManagerMenu"));
         if (GameObject.Find("Canvas") != null)
         {
             Destroy(GameObject.Find("Canvas"));
