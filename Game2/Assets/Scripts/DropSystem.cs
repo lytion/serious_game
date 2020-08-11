@@ -10,7 +10,7 @@ public class DropSystem : MonoBehaviour
     public List<GameObject> weapon;
     [SerializeField]
     public List<GameObject> potion;
-    public string key = "key";
+    public GameObject key;
     public bool keyFound = false;
 
     public void DropItem(int chestRemaining)
@@ -18,7 +18,7 @@ public class DropSystem : MonoBehaviour
         if (chestRemaining == 1 && !keyFound)
         {
             Debug.Log(">>> Loot Key !");
-            SetKeyFound(true);
+            PutKeyOnMap();
             return;
         }
 
@@ -40,8 +40,14 @@ public class DropSystem : MonoBehaviour
         else
         {
             Debug.Log(">>> Random Loot Key !");
-            SetKeyFound(true);
+            PutKeyOnMap();
         }
+    }
+
+    public void PutKeyOnMap()
+    {
+        key.transform.position = new Vector3(GetPlayerPosition().x + 2, GetPlayerPosition().y, 0);
+        key.SetActive(true);
     }
 
     public int GetRandomWeapon()

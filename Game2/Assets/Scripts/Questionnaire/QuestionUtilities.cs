@@ -319,7 +319,7 @@ public class QuestionUtilities : MonoBehaviour
             }
             else if (_enemyType == "boss")
             {
-                GetComponent<DropSystem>().SetKeyFound(true);
+                GetComponent<DropSystem>().PutKeyOnMap();
             }
             if (manager.GetComponent<GameData>().GetPlayerHealth() <= 0)
             {

@@ -27,6 +27,12 @@ public class Item : MonoBehaviour
                     gameObject.SetActive(false);
                 }
             }
+            else if (type == "key")
+            {
+                GameObject.Find("GameManager").GetComponent<DropSystem>().SetKeyFound(true);
+                GameObject.Find("GameManager").GetComponent<GameData>().UpdateKeyFound();
+                gameObject.SetActive(false);
+            }
         }
     }
 }
