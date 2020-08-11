@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameData : MonoBehaviour
@@ -8,6 +9,7 @@ public class GameData : MonoBehaviour
     private static int _playerHealth = 15;
     private static int _playerMaxHealth = 15;
     public HealthBar healthBar;
+    public GameObject dmgText;
     
     public int GetPlayerHealth()
     {
@@ -43,11 +45,13 @@ public class GameData : MonoBehaviour
     public void IncreasePlayerAtk(int dmg)
     {
         _playerAtk += dmg;
+        dmgText.GetComponent<TextMeshProUGUI>().text = _playerAtk.ToString();
     }
     
     public void SetPlayerAtk(int atk)
     {
         _playerAtk = atk;
+        dmgText.GetComponent<TextMeshProUGUI>().text = _playerAtk.ToString();
     }
 
     private static string _introToNextScene;
@@ -78,6 +82,8 @@ public class GameData : MonoBehaviour
     {
         if (healthBar)
             healthBar.SetMaxHealth(_playerMaxHealth);
+        if (dmgText)
+            dmgText.GetComponent<TextMeshProUGUI>().text = GetPlayerAtk().ToString();
         SetIsTutorial(true);
     }
 }
