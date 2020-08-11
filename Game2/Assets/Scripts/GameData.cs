@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GameData : MonoBehaviour
 {
-    private static int _playerHealth = 10;
-    private static int _playerMaxHealth = 10;
+    private static int _playerHealth = 15;
+    private static int _playerMaxHealth = 15;
     public HealthBar healthBar;
     
     public int GetPlayerHealth()
@@ -61,10 +61,23 @@ public class GameData : MonoBehaviour
     {
         _introToNextScene = scene;
     }
+    
+    private static bool _isTutorial;
+
+    public bool GetIsTutorial()
+    {
+        return _isTutorial;
+    }
+
+    public void SetIsTutorial(bool tuto)
+    {
+        _isTutorial = tuto;
+    }
 
     public void Start()
     {
         if (healthBar)
             healthBar.SetMaxHealth(_playerMaxHealth);
+        SetIsTutorial(true);
     }
 }

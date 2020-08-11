@@ -17,7 +17,7 @@ public class QuestionUtilities : MonoBehaviour
     private List<int> selectedAnswers;
     private string _explanationText;
     private int nbGoodAnswerInQuestion;
-    private int nbGoodAnswerSelected;
+    private bool hasTookWrongAnswer;
     public GameObject questionnaireMenu;
     public GameObject validateButton;
     public GameObject okButton;
@@ -102,7 +102,10 @@ public class QuestionUtilities : MonoBehaviour
     
     public Question GetRandomQuestion()
     {
-        allQuestions = _initQuestion.GetAllQuestions();
+        if (manager.GetComponent<GameData>().GetIsTutorial())
+            allQuestions = _initQuestion.GetTutorialQuestion();
+        else
+            allQuestions = _initQuestion.GetAllQuestions();
         allQuestions = allQuestions.OrderBy(x => Guid.NewGuid()).ToList();
         Question questionPicked;
         int nbQuestionAnswered = 0;
@@ -129,7 +132,7 @@ public class QuestionUtilities : MonoBehaviour
         Question question = GetRandomQuestion();
         answersDict = new Dictionary<string, bool>();
         selectedAnswers = new List<int>();
-        nbGoodAnswerSelected = 0;
+        hasTookWrongAnswer = false;
         nbGoodAnswerInQuestion = 1;
         
         int nbGoodAnswers = nbGoodAnswerInQuestion;
@@ -216,7 +219,7 @@ public class QuestionUtilities : MonoBehaviour
                 if (answers[i].text == kvp.Key)
                 {
                     if (selectedAnswers.Contains(i))
-                        Debug.Log(">>> idx: "+i+"answer: "+kvp.Key);
+                        Debug.Log(">>> idx: "+i+"answer: "+kvp.Key + "isCorrect: "+kvp.Value);
                     if (kvp.Value)
                     {
                         ColorBlock colors = answers[i].transform.parent.GetComponent<Button>().colors;
@@ -226,8 +229,6 @@ public class QuestionUtilities : MonoBehaviour
                         colors.disabledColor = new Color32(11, 109, 11, 255);
                         answers[i].transform.parent.GetComponent<Button>().colors = colors;
                         answers[i].transform.parent.GetComponent<Button>().interactable = false;
-                        if (selectedAnswers.Contains(i))
-                            nbGoodAnswerSelected++;
                     }
                     else
                     {
@@ -240,6 +241,7 @@ public class QuestionUtilities : MonoBehaviour
                             colors.disabledColor = new Color32(143, 31, 31, 255);
                             answers[i].transform.parent.GetComponent<Button>().colors = colors;
                             answers[i].transform.parent.GetComponent<Button>().interactable = false;
+                            hasTookWrongAnswer = true;
                         }
                         else
                         {
@@ -250,9 +252,10 @@ public class QuestionUtilities : MonoBehaviour
             }
         }
         validateButton.SetActive(false);
-        
-        if (nbGoodAnswerSelected == nbGoodAnswerInQuestion)
+        if (!hasTookWrongAnswer && selectedAnswers.Count == 1)
         {
+            Debug.Log(">>> nbGoodAnswerInQuestion"+nbGoodAnswerInQuestion);
+            Debug.Log(">>> nbGoodAnswerSelected"+hasTookWrongAnswer);
             if (_enemyType == "mob")
                 _enemy.health -= manager.GetComponent<GameData>().GetPlayerAtk();
             else if (_enemyType == "chest")
@@ -262,7 +265,7 @@ public class QuestionUtilities : MonoBehaviour
         }
         else
         {
-            if (_enemyType == "mob")
+            if (_enemyType == "mob" && !manager.GetComponent<GameData>().GetIsTutorial())
                 manager.GetComponent<GameData>().DecreasePlayerHealth(5);
             ExplanationContainer.transform.GetChild(1).gameObject.SetActive(true);
         }
@@ -296,7 +299,7 @@ public class QuestionUtilities : MonoBehaviour
             answers[i].transform.parent.parent.gameObject.SetActive(true);
         }
         
-        if (!IsEndBattle())
+        if (!IsEndBattle() && !manager.GetComponent<GameData>().GetIsTutorial())
         {
             StartBattle();
         }
@@ -305,6 +308,7 @@ public class QuestionUtilities : MonoBehaviour
             if (_enemyType == "door")
             {
                 _dropSystem.keyFound = false;
+                manager.GetComponent<GameData>().SetIsTutorial(false);
                 SceneManager.LoadScene(_nextScene);
             }
             else if (_enemyType == "chest")
@@ -347,6 +351,8 @@ public class QuestionUtilities : MonoBehaviour
 
     public void StartBattle()
     {
+        if (manager.GetComponent<GameData>().GetIsTutorial() && _enemyType != "door")
+            GameObject.Find("TutorialManager").GetComponent<Tutorial>().DisplayTutorialQuestion();
         DisplayQuestionnaireMenu();
         PrepareQuestion();
     }
@@ -358,7 +364,7 @@ public class QuestionUtilities : MonoBehaviour
             return false;
         if (_enemyType == "chest" && _chest != null && _chest.health > 0)
             return false;
-        if (_enemyType == "door" && nbGoodAnswerSelected != nbGoodAnswerInQuestion)
+        if (_enemyType == "door" && hasTookWrongAnswer)
             return false;
         return true;
     }

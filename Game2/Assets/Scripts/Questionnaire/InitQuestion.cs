@@ -6,11 +6,37 @@ using UnityEngine;
 public class InitQuestion : MonoBehaviour
 {
     public List<Question> allQuestion = new List<Question>();
+    public List<Question> tutorialQuestion = new List<Question>();
 
     public List<Question> GetAllQuestions() { return allQuestion;}
+    public List<Question> GetTutorialQuestion() { return tutorialQuestion;}
 
     public void Start()
     {
+        tutorialQuestion.Add(new Question()
+        {
+            question = "Pick one answer. The correct answer wil turn in green otherwise it will turn in red.",
+            goodAnswer = new List<string>()
+            {
+                "Good Answer",
+            },
+            badAnswer = new List<string>()
+            {
+                "  Bad Answer",
+                " Bad Answer ",
+                "Bad Answer  ",
+            },
+            explanation = new List<string>()
+            {
+                "You're lucky this is a tutorial but next time you will lose health !",
+                "You're lucky this is a tutorial but next time you will lose health !",
+                "You're lucky this is a tutorial but next time you will lose health !",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 0,
+        });
+        // All questions
         allQuestion.Add(new Question()
         {
             question = "Which of these passwords is the more secure?",
