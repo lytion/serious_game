@@ -18,7 +18,7 @@ public class DropSystem : MonoBehaviour
         if (chestRemaining == 1 && !keyFound)
         {
             Debug.Log(">>> Loot Key !");
-            keyFound = true;
+            SetKeyFound(true);
             return;
         }
 
@@ -40,7 +40,7 @@ public class DropSystem : MonoBehaviour
         else
         {
             Debug.Log(">>> Random Loot Key !");
-            keyFound = true;
+            SetKeyFound(true);
         }
     }
 
@@ -75,5 +75,11 @@ public class DropSystem : MonoBehaviour
     public Vector2 GetPlayerPosition()
     {
         return GameObject.FindGameObjectWithTag("Player").transform.position;
+    }
+
+    public void SetKeyFound(bool isFound)
+    {
+        keyFound = isFound;
+        GetComponent<GameData>().UpdateKeyFound();
     }
 }

@@ -251,6 +251,8 @@ public class QuestionUtilities : MonoBehaviour
                 }
             }
         }
+        if (selectedAnswers.Count != 1)
+            hasTookWrongAnswer = true;
         validateButton.SetActive(false);
         if (!hasTookWrongAnswer && selectedAnswers.Count == 1)
         {
@@ -307,13 +309,17 @@ public class QuestionUtilities : MonoBehaviour
         {
             if (_enemyType == "door")
             {
-                _dropSystem.keyFound = false;
+                GetComponent<DropSystem>().SetKeyFound(false);
                 manager.GetComponent<GameData>().SetIsTutorial(false);
                 SceneManager.LoadScene(_nextScene);
             }
             else if (_enemyType == "chest")
             {
                 _dropSystem.DropItem(_dropSystem.GetAllChests());
+            }
+            else if (_enemyType == "boss")
+            {
+                GetComponent<DropSystem>().SetKeyFound(true);
             }
             if (manager.GetComponent<GameData>().GetPlayerHealth() <= 0)
             {
@@ -372,6 +378,7 @@ public class QuestionUtilities : MonoBehaviour
             return false;
         if (_enemyType == "chest" && _chest != null && _chest.health > 0)
             return false;
+        Debug.Log(">>> hasTookWrongAnswer: "+hasTookWrongAnswer);
         if (_enemyType == "door" && hasTookWrongAnswer)
             return false;
         return true;

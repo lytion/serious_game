@@ -14,12 +14,14 @@ public class Tutorial : MonoBehaviour
         controlContainer.SetActive(false);
         questionContainer.SetActive(true);
         tutorialContainer.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void DisplayTutorialQuestion()
     {
         questionContainer.SetActive(true);
         tutorialContainer.SetActive(true);
+        Time.timeScale = 0;
     }
     public void HideQuestion()
     {
@@ -32,6 +34,7 @@ public class Tutorial : MonoBehaviour
     {
         chestContainer.SetActive(true);
         tutorialContainer.SetActive(true);
+        Time.timeScale = 0;
     }
     public void HideChest()
     {

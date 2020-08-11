@@ -11,6 +11,7 @@ public class GameData : MonoBehaviour
     private static int _playerMaxHealth = 15;
     public HealthBar healthBar;
     public GameObject dmgText;
+    public GameObject keyText;
     
     public int GetPlayerHealth()
     {
@@ -80,12 +81,20 @@ public class GameData : MonoBehaviour
         _isTutorial = tuto;
     }
 
+    public void UpdateKeyFound()
+    {
+        keyText.GetComponent<TextMeshProUGUI>().text = GetComponent<DropSystem>().keyFound ? "1" : "0";
+    }
+
     public void Start()
     {
         if (healthBar)
             healthBar.SetMaxHealth(_playerMaxHealth);
         if (dmgText)
             dmgText.GetComponent<TextMeshProUGUI>().text = GetPlayerAtk().ToString();
+        if (keyText)
+            keyText.GetComponent<TextMeshProUGUI>().text = GetComponent<DropSystem>().keyFound ? "1" : "0";
         SetIsTutorial(true);
+        Time.timeScale = 0;
     }
 }

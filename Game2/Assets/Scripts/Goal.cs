@@ -22,9 +22,16 @@ public class Goal : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        audioSrc.Play();
-        _questionUtilities.SetEnemyType("door");
-        _questionUtilities.SetNextScene(nextScene);
-        _questionUtilities.StartBattle();
+        if (!GameObject.Find("GameManager").GetComponent<DropSystem>().keyFound)
+        {
+            GameObject.Find("GameManager").GetComponent<DoorMessage>().DisplayMessage();
+        }
+        else
+        {
+            audioSrc.Play();
+            _questionUtilities.SetEnemyType("door");
+            _questionUtilities.SetNextScene(nextScene);
+            _questionUtilities.StartBattle();            
+        }
     }
 }
