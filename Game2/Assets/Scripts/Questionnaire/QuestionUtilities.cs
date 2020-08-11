@@ -315,6 +315,14 @@ public class QuestionUtilities : MonoBehaviour
             {
                 _dropSystem.DropItem(_dropSystem.GetAllChests());
             }
+            if (manager.GetComponent<GameData>().GetPlayerHealth() <= 0)
+            {
+                if (SceneManager.GetActiveScene().name != "Intro1_boss")
+                    manager.GetComponent<GameData>().SetPlayerAtk(5); 
+                int hp = manager.GetComponent<GameData>().GetPlayerMaxHealth();
+                manager.GetComponent<GameData>().SetPlayerHealth(hp);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
             // TODO Check who lose
             Destroy(_enemyObject);
         }

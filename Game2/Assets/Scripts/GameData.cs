@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -26,13 +27,8 @@ public class GameData : MonoBehaviour
     }
     public void DecreasePlayerHealth(int hp)
     {
-        if (_playerHealth - hp <= 0)
-            GameManager.instance.RestartGame(2.5f);
-        else
-        {
-            _playerHealth -= hp;
-            healthBar.SetHealth(_playerHealth);   
-        }
+        _playerHealth -= hp;
+        healthBar.SetHealth(_playerHealth);
     }
     
     private static int _playerAtk = 5;
@@ -54,6 +50,12 @@ public class GameData : MonoBehaviour
         dmgText.GetComponent<TextMeshProUGUI>().text = _playerAtk.ToString();
     }
 
+    public void SetPlayerHealth(int hp)
+    {
+        _playerHealth = hp;
+        healthBar.SetHealth(_playerHealth);
+    }
+    
     private static string _introToNextScene;
 
     public string GetIntroToNextScene()
