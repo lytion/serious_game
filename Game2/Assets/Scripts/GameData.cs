@@ -31,14 +31,17 @@ public class GameData : MonoBehaviour
         _playerHealth -= hp;
         healthBar.SetHealth(_playerHealth);
     }
+    public void SetPlayerHealth(int hp)
+    {
+        _playerHealth = hp;
+        healthBar.SetHealth(_playerHealth);
+    }
     
     private static int _playerAtk = 5;
-
     public int GetPlayerAtk()
     {
         return _playerAtk;
     }
-
     public void IncreasePlayerAtk(int dmg)
     {
         _playerAtk += dmg;
@@ -51,19 +54,11 @@ public class GameData : MonoBehaviour
         dmgText.GetComponent<TextMeshProUGUI>().text = _playerAtk.ToString();
     }
 
-    public void SetPlayerHealth(int hp)
-    {
-        _playerHealth = hp;
-        healthBar.SetHealth(_playerHealth);
-    }
-    
     private static string _introToNextScene;
-
     public string GetIntroToNextScene()
     {
         return _introToNextScene;
     }
-
     public void SetIntroToNextScene(string scene)
     {
         _introToNextScene = scene;
@@ -75,7 +70,6 @@ public class GameData : MonoBehaviour
     {
         return _isTutorial;
     }
-
     public void SetIsTutorial(bool tuto)
     {
         _isTutorial = tuto;
@@ -84,6 +78,13 @@ public class GameData : MonoBehaviour
     public void UpdateKeyFound()
     {
         keyText.GetComponent<TextMeshProUGUI>().text = GetComponent<DropSystem>().keyFound ? "1" : "0";
+    }
+
+    public void ResetStats()
+    {
+        healthBar.SetMaxHealth(_playerMaxHealth);
+        SetPlayerHealth(_playerMaxHealth);
+        SetPlayerAtk(5);
     }
 
     public void Start()

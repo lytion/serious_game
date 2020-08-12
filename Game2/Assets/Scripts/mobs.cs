@@ -7,7 +7,7 @@ public class mobs : MonoBehaviour
     private Rigidbody2D rb2d;
     private GameObject Player;
     private float Range;
-    public int health = 10;
+    public int health;
     private QuestionUtilities _questionUtilities;
 
     [SerializeField]

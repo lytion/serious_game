@@ -15,7 +15,7 @@ public class Item : MonoBehaviour
             if (type == "weapon")
             {
                 Debug.Log(">>> Player atk increase !");
-                manager.GetComponent<GameData>().IncreasePlayerAtk(5);
+                manager.GetComponent<GameData>().IncreasePlayerAtk(3);
                 gameObject.SetActive(false);
             }
             else if (type == "potion")

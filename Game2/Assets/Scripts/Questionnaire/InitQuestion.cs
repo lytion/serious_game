@@ -92,7 +92,7 @@ public class InitQuestion : MonoBehaviour
             question = "Which of these passwords is weak?",
             goodAnswer = new List<string>()
             {
-                "myOwlHedw1ge",
+                "myOwlHedwige",
                 "admin",
                 "PeteR99",
                 "B7s0"

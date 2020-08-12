@@ -141,10 +141,7 @@ public class QuestionUtilities : MonoBehaviour
         {
             if (nbGoodAnswers > 0)
             {
-                Debug.Log("question: "+question.question);
-                Debug.Log("question.goodAnswer.Count: "+question.goodAnswer.Count);
                 int idxGoodAnswer = new System.Random().Next(0, question.goodAnswer.Count-1);
-                Debug.Log("idxGoodAnswer: "+idxGoodAnswer);
                 answersDict.Add(question.goodAnswer[idxGoodAnswer], true);
                 _explanationText = question.explanation[idxGoodAnswer];
                 _explanationText = _explanationText.Replace("#", question.goodAnswer[idxGoodAnswer]);
@@ -262,7 +259,7 @@ public class QuestionUtilities : MonoBehaviour
         {
             Debug.Log(">>> nbGoodAnswerInQuestion"+nbGoodAnswerInQuestion);
             Debug.Log(">>> nbGoodAnswerSelected"+hasTookWrongAnswer);
-            if (_enemyType == "mob")
+            if (_enemyType == "mob" || _enemyType == "boss")
                 _enemy.health -= manager.GetComponent<GameData>().GetPlayerAtk();
             else if (_enemyType == "chest")
                 _chest.health -= manager.GetComponent<GameData>().GetPlayerAtk();
@@ -271,7 +268,7 @@ public class QuestionUtilities : MonoBehaviour
         }
         else
         {
-            if (_enemyType == "mob" && !manager.GetComponent<GameData>().GetIsTutorial())
+            if ((_enemyType == "mob" || _enemyType == "boss") && !manager.GetComponent<GameData>().GetIsTutorial())
                 manager.GetComponent<GameData>().DecreasePlayerHealth(5);
             ExplanationContainer.transform.GetChild(1).gameObject.SetActive(true);
         }
@@ -377,7 +374,7 @@ public class QuestionUtilities : MonoBehaviour
 
     public bool IsEndBattle()
     {
-        if (_enemyType == "mob" && _enemy != null && _enemy.health > 0 && 
+        if ((_enemyType == "mob" || _enemyType == "boss") && _enemy != null && _enemy.health > 0 && 
             manager.GetComponent<GameData>().GetPlayerHealth() > 0)
             return false;
         if (_enemyType == "chest" && _chest != null && _chest.health > 0)

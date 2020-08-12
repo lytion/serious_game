@@ -1406,7 +1406,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593395296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0094433, y: 2.1522353, z: -10}
+  m_LocalPosition: {x: 3.0096073, y: 2.1522353, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2272,6 +2272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 716542018}
   dmgText: {fileID: 0}
+  keyText: {fileID: 0}
 --- !u!114 &808698960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7465,7 +7466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dff14d29f73f4542aba25f9c3c30788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
   speedMultiplier: 5
 --- !u!61 &1761253887
 BoxCollider2D:
@@ -10453,7 +10454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135443581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0094433, y: 2.1522353, z: -10}
+  m_LocalPosition: {x: 3.0096073, y: 2.1522353, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1709324105}
