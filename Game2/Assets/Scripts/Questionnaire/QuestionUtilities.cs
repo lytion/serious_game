@@ -140,7 +140,7 @@ public class QuestionUtilities : MonoBehaviour
         {
             if (nbGoodAnswers > 0)
             {
-                int idxGoodAnswer = new System.Random().Next(0, question.goodAnswer.Count);
+                int idxGoodAnswer = new System.Random().Next(0, question.goodAnswer.Count-1);
                 answersDict.Add(question.goodAnswer[idxGoodAnswer], true);
                 _explanationText = question.explanation[idxGoodAnswer];
                 _explanationText = _explanationText.Replace("#", question.goodAnswer[idxGoodAnswer]);
