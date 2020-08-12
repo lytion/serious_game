@@ -731,7 +731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91122876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0096073, y: 2.1522353, z: -10}
+  m_LocalPosition: {x: 3.0094433, y: 2.1522353, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 711014049}
@@ -1601,7 +1601,7 @@ GameObject:
   - component: {fileID: 545243816}
   - component: {fileID: 545243815}
   m_Layer: 5
-  m_Name: swordIcon
+  m_Name: keyIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1645,7 +1645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 72ae7c2320cf04c119ab1f7a012edc7f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7970840b9ee0b483ca413b47527c2ba0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1804,7 +1804,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.12, y: 0.3}
+    oldSize: {x: 0.16, y: 0.16}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1873,7 +1873,7 @@ SpriteRenderer:
   m_SortingLayerID: -834580805
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 03ce232b6e90c4ea6b6b4c2c2b0556c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7970840b9ee0b483ca413b47527c2ba0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2816,7 +2816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972792862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0096073, y: 2.1522353, z: -10}
+  m_LocalPosition: {x: 3.0094433, y: 2.1522353, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
