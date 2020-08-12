@@ -440,6 +440,10 @@ public class InitQuestion : MonoBehaviour
             explanation = new List<string>()
             {
                 "'#' is the correct answer, the other are used in a cyber environment but don't protect.",
+                "'#' is the correct answer, the other are used in a cyber environment but don't protect.",
+                "'#' is the correct answer, the other are used in a cyber environment but don't protect.",
+                "'#' is the correct answer, the other are used in a cyber environment but don't protect.",
+                "'#' is the correct answer, the other are used in a cyber environment but don't protect.",
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
@@ -465,6 +469,9 @@ public class InitQuestion : MonoBehaviour
             },
             explanation = new List<string>()
             {
+                "'#' is the correct answer, the other are used protect the cyber environment.",
+                "'#' is the correct answer, the other are used protect the cyber environment.",
+                "'#' is the correct answer, the other are used protect the cyber environment.",
                 "'#' is the correct answer, the other are used protect the cyber environment.",
             },
             hasAnsweredCorrectly = false,

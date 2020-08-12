@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.iOS;
 using UnityEngine.SceneManagement;
 
 public class QuestionUtilities : MonoBehaviour
@@ -140,7 +141,10 @@ public class QuestionUtilities : MonoBehaviour
         {
             if (nbGoodAnswers > 0)
             {
+                Debug.Log("question: "+question.question);
+                Debug.Log("question.goodAnswer.Count: "+question.goodAnswer.Count);
                 int idxGoodAnswer = new System.Random().Next(0, question.goodAnswer.Count-1);
+                Debug.Log("idxGoodAnswer: "+idxGoodAnswer);
                 answersDict.Add(question.goodAnswer[idxGoodAnswer], true);
                 _explanationText = question.explanation[idxGoodAnswer];
                 _explanationText = _explanationText.Replace("#", question.goodAnswer[idxGoodAnswer]);
