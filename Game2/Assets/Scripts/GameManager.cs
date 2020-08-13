@@ -48,10 +48,10 @@ public class GameManager : MonoBehaviour
 
     public void PlayShootingSfx()
     {
-        if (audioSrc.isPlaying)
-        {
-            audioSrc.Stop();
-        }
+        // if (audioSrc.isPlaying)
+        // {
+        //     audioSrc.Stop();
+        // }
 
         audioSrc.clip = shootClip;
         audioSrc.Play();
