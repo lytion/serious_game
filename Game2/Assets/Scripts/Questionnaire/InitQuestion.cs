@@ -15,7 +15,7 @@ public class InitQuestion : MonoBehaviour
     {
         tutorialQuestion.Add(new Question()
         {
-            question = "Pick one answer. The correct answer wil turn in green otherwise it will turn in red.",
+            question = "Pick one answer. The correct answer will turn in green otherwise it will turn in red.",
             goodAnswer = new List<string>()
             {
                 "Good Answer",
@@ -39,7 +39,7 @@ public class InitQuestion : MonoBehaviour
         // All questions
         allQuestion.Add(new Question()
         {
-            question = "Which of these passwords is the more secure?",
+            question = "Which of these passwords is the most secure?",
             goodAnswer = new List<string>()
             {
                 "dHsj4_k78ds",
@@ -54,8 +54,8 @@ public class InitQuestion : MonoBehaviour
             },
             explanation = new List<string>()
             {
-                "'#' is the correct answer because it has more than 8 characters length, has lower and upper case, digits and special characters",
-                "'#' is the correct answer because it has more than 8 characters length, has lower and upper case, digits and special characters",
+                "'#' is the correct answer because it has more than 8 characters long, has lower and upper case, digits and special characters",
+                "'#' is the correct answer because it has more than 8 characters long, has lower and upper case, digits and special characters",
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
@@ -63,7 +63,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "Which of these passwords is the more secure and easiest to remember?",
+            question = "Which of these passwords is the most secure and easiest to remember?",
             goodAnswer = new List<string>()
             {
                 "Borris:Uk)2020",
@@ -78,9 +78,9 @@ public class InitQuestion : MonoBehaviour
             },
             explanation = new List<string>()
             {
-                "'#' is the correct answer because it has more than 8 characters length, has lower and upper case, digits and special characters" +
+                "'#' is the correct answer because it has more than 8 characters long, has lower and upper case, digits and special characters" +
                 "but also because it contains some word that is easy to remember.",
-                "'#' is the correct answer because it has more than 8 characters length, has lower and upper case, digits and special characters" +
+                "'#' is the correct answer because it has more than 8 characters long, has lower and upper case, digits and special characters" +
                 "but also because it contains some word that is easy to remember.",
             },
             hasAnsweredCorrectly = false,
@@ -105,9 +105,9 @@ public class InitQuestion : MonoBehaviour
             },
             explanation = new List<string>()
             {
-              "'#' is the correct answer because it can be found easily by searching information about you on social network ofr example.",
-              "'#' is the correct answer because it is one of the password hackers try first.",
-              "'#' is the correct answer because it can be found easily by searching information about you on social network ofr example.",
+              "'#' is the correct answer because it can be found easily by searching informations about you on social network for example.",
+              "'#' is the correct answer because it is a common password and hackers will try it first.",
+              "'#' is the correct answer because it can be found easily by searching informations about you on social network for example.",
               "'#' is the correct answer because the length of the password is too short and can be found easily by a brute force attack."
             },
             hasAnsweredCorrectly = false,
@@ -116,7 +116,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "Which of these requirements make a password more secure ?",
+            question = "Which of these requirements make a password more secure?",
             goodAnswer = new List<string>()
             {
                 "special character",
@@ -139,7 +139,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "What the encryption is used for ?",
+            question = "What the encryption is used for?",
             goodAnswer = new List<string>()
             {
                 "confidentiality",
@@ -162,7 +162,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "What hash functions are used for ?",
+            question = "What hash functions are used for?",
             goodAnswer = new List<string>()
             {
                 "integrity",
@@ -184,7 +184,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "In which domain is a password useful ?",
+            question = "In which domain is a password useful?",
             goodAnswer = new List<string>()
             {
                 "confidentiality",
@@ -198,7 +198,7 @@ public class InitQuestion : MonoBehaviour
             },
             explanation = new List<string>()
             {
-                "'#' is the correct answer because it prevent unauthorized access to confidential information.",
+                "'#' is the correct answer because it prevent unauthorized access to confidential informations.",
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
@@ -206,7 +206,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "Which domain this definition refers to? 'preventing unauthorized disclosure of information. Includes secrecy, privacy' ?",
+            question = "Which domain this definition refers to? 'preventing unauthorized disclosure of informations. Includes secrecy, privacy'?",
             goodAnswer = new List<string>()
             {
                 "confidentiality",
@@ -220,7 +220,7 @@ public class InitQuestion : MonoBehaviour
             },
             explanation = new List<string>()
             {
-                "'#' is the correct answer because it can prevent unauthorized disclosure information.",
+                "'#' is the correct answer because it can prevent unauthorized disclosure of informations.",
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
@@ -228,7 +228,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "Which domain this definition refers to? 'preventing unauthorized modification of data and system' ?",
+            question = "Which domain this definition refers to? 'preventing unauthorized modification of data and system'?",
             goodAnswer = new List<string>()
             {
                 "integrity",
@@ -250,7 +250,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "Which domain this definition refers to? 'preventing downtime of systems or inability to access data/information' ?",
+            question = "Which domain this definition refers to? 'preventing downtime of systems or inability to access data/information'?",
             goodAnswer = new List<string>()
             {
                 "availability",
@@ -272,7 +272,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "Which of these methods confirm the truth of your identity ?",
+            question = "Which of these methods confirm the truth of your identity?",
             goodAnswer = new List<string>()
             {
                 "password",
@@ -295,7 +295,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "What is the definition of Authentication ?",
+            question = "What is the definition of Authentication?",
             goodAnswer = new List<string>()
             {
                 "the process of confirming the truth or correctness of the claimed artefact or identity",
@@ -316,7 +316,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "What is the definition of Authorization ?",
+            question = "What is the definition of Authorization?",
             goodAnswer = new List<string>()
             {
                 "the process of granting permission to someone/thing do some action (e.g., access files)",
@@ -337,7 +337,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "What is the definition of Non-repudiation ?",
+            question = "What is the definition of Non-repudiation?",
             goodAnswer = new List<string>()
             {
                 "ability for parties to prove that a message has been sent by a specific person, and received by a specific person. Therefore neither party can claim they did not send/receive the message.",
@@ -358,7 +358,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "What is the cyber security ?",
+            question = "What is the cyber security?",
             goodAnswer = new List<string>()
             {
                 "non-Information based assets that are vulnerable to threats via ICT",
@@ -379,7 +379,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "What is the information security ?",
+            question = "What is the information security?",
             goodAnswer = new List<string>()
             {
                 "information based assets Stored or transmitted using not ICT",
@@ -400,7 +400,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "What is the technology security ?",
+            question = "What is the technology security?",
             goodAnswer = new List<string>()
             {
                 "information based assets Stored or transmitted using ICT",
@@ -421,7 +421,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "Which word is used to protect cyber environment, organization and user's assets ?",
+            question = "Which word is used to protect cyber environment, organization and user's assets?",
             goodAnswer = new List<string>()
             {
                 "collection of tool",
@@ -439,11 +439,11 @@ public class InitQuestion : MonoBehaviour
             },
             explanation = new List<string>()
             {
-                "'#' is the correct answer, the other are used in a cyber environment but don't protect.",
-                "'#' is the correct answer, the other are used in a cyber environment but don't protect.",
-                "'#' is the correct answer, the other are used in a cyber environment but don't protect.",
-                "'#' is the correct answer, the other are used in a cyber environment but don't protect.",
-                "'#' is the correct answer, the other are used in a cyber environment but don't protect.",
+                "'#' is the correct answer, the others are used in a cyber environment but don't protect.",
+                "'#' is the correct answer, the others are used in a cyber environment but don't protect.",
+                "'#' is the correct answer, the others are used in a cyber environment but don't protect.",
+                "'#' is the correct answer, the others are used in a cyber environment but don't protect.",
+                "'#' is the correct answer, the others are used in a cyber environment but don't protect.",
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
@@ -451,7 +451,7 @@ public class InitQuestion : MonoBehaviour
         });
         allQuestion.Add(new Question()
         {
-            question = "Which word is used in a cyber environment by organization and user's assets ?",
+            question = "Which word is used in a cyber environment by organization and user's assets?",
             goodAnswer = new List<string>()
             {
                 "connected computing devices",
@@ -469,10 +469,10 @@ public class InitQuestion : MonoBehaviour
             },
             explanation = new List<string>()
             {
-                "'#' is the correct answer, the other are used protect the cyber environment.",
-                "'#' is the correct answer, the other are used protect the cyber environment.",
-                "'#' is the correct answer, the other are used protect the cyber environment.",
-                "'#' is the correct answer, the other are used protect the cyber environment.",
+                "'#' is the correct answer, the others are used protect the cyber environment.",
+                "'#' is the correct answer, the others are used protect the cyber environment.",
+                "'#' is the correct answer, the others are used protect the cyber environment.",
+                "'#' is the correct answer, the others are used protect the cyber environment.",
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,

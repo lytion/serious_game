@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8100572908869963907}
   - component: {fileID: 8100572908869963910}
   - component: {fileID: 4184955093963350323}
-  - component: {fileID: 6793940217956393073}
+  - component: {fileID: 4395713831001970503}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -179,6 +179,7 @@ MonoBehaviour:
     type: 3}
   ExplanationContainer: {fileID: 0}
   deathContainer: {fileID: 0}
+  potionContainer: {fileID: 0}
 --- !u!114 &8100572908869963910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +212,7 @@ MonoBehaviour:
   potion: []
   key: {fileID: 0}
   keyFound: 0
---- !u!114 &6793940217956393073
+--- !u!114 &4395713831001970503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82225fec08b8422d81c779bcd3d01b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 0}
+  doorContainer: {fileID: 0}
 --- !u!1 &8100572909346635069
 GameObject:
   m_ObjectHideFlags: 0

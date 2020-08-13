@@ -24,7 +24,7 @@ public class Goal : MonoBehaviour
     {
         if (!GameObject.Find("GameManager").GetComponent<DropSystem>().keyFound)
         {
-            GameObject.Find("GameManager").GetComponent<DoorMessage>().DisplayMessage();
+            GameObject.Find("GameManager").GetComponent<InfoMessage>().DisplayDoorMessage();
         }
         else
         {

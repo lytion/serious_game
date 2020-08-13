@@ -83,6 +83,18 @@ public class DropSystem : MonoBehaviour
         return GameObject.FindGameObjectWithTag("Player").transform.position;
     }
 
+    public void SetAllItemNonActive()
+    {
+        for (int i = 0; i < weapon.Count; i++)
+        {
+            weapon[i].SetActive(false);
+        }
+        for (int i = 0; i < potion.Count; i++)
+        {
+            potion[i].SetActive(false);
+        }
+    }
+
     public void SetKeyFound(bool isFound)
     {
         keyFound = isFound;

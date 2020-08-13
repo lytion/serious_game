@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
             GetComponent<GameData>().SetPlayerAtk(5); 
         int hp = GetComponent<GameData>().GetPlayerMaxHealth();
         GetComponent<GameData>().SetPlayerHealth(hp);
+        GetComponent<DropSystem>().SetAllItemNonActive();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

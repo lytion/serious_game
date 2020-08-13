@@ -23,6 +23,7 @@ public class QuestionUtilities : MonoBehaviour
     public GameObject okButton;
     public GameObject ExplanationContainer;
     public GameObject deathContainer;
+    public GameObject potionContainer;
     private GameObject manager;
     private DropSystem _dropSystem;
 

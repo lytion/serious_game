@@ -26,6 +26,10 @@ public class Item : MonoBehaviour
                     manager.GetComponent<GameData>().IncreasePlayerHealth(3);
                     gameObject.SetActive(false);
                 }
+                else
+                {
+                    manager.GetComponent<InfoMessage>().DisplayPotionMessage();
+                }
             }
             else if (type == "key")
             {
