@@ -23,6 +23,17 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(GameObject.Find("Items"));
     }
 
+    public void ReloadGame()
+    {
+        Time.timeScale = 1;
+        GameObject.Find("DeathContainer").SetActive(false);
+        if (SceneManager.GetActiveScene().name != "Intro1_boss")
+            GetComponent<GameData>().SetPlayerAtk(5); 
+        int hp = GetComponent<GameData>().GetPlayerMaxHealth();
+        GetComponent<GameData>().SetPlayerHealth(hp);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void RestartGame(float delay)
     {
         StartCoroutine(RestartGameCoroutine(delay));

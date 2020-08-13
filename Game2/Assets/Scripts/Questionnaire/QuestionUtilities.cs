@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-using UnityEngine.iOS;
 using UnityEngine.SceneManagement;
 
 public class QuestionUtilities : MonoBehaviour
@@ -23,6 +22,7 @@ public class QuestionUtilities : MonoBehaviour
     public GameObject validateButton;
     public GameObject okButton;
     public GameObject ExplanationContainer;
+    public GameObject deathContainer;
     private GameObject manager;
     private DropSystem _dropSystem;
 
@@ -318,17 +318,13 @@ public class QuestionUtilities : MonoBehaviour
             {
                 _dropSystem.DropItem(_dropSystem.GetAllChests());
             }
-            else if (_enemyType == "boss")
+            else if (_enemyType == "boss" && GetComponent<GameData>().GetPlayerHealth() > 0)
             {
                 GetComponent<DropSystem>().PutKeyOnMap();
             }
             if (manager.GetComponent<GameData>().GetPlayerHealth() <= 0)
             {
-                if (SceneManager.GetActiveScene().name != "Intro1_boss")
-                    manager.GetComponent<GameData>().SetPlayerAtk(5); 
-                int hp = manager.GetComponent<GameData>().GetPlayerMaxHealth();
-                manager.GetComponent<GameData>().SetPlayerHealth(hp);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                deathContainer.SetActive(true);
             }
             // TODO Check who lose
             Destroy(_enemyObject);
