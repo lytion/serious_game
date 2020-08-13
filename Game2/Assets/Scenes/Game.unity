@@ -1288,6 +1288,11 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 558362919}
+    - target: {fileID: 6793940217956393073, guid: bbfa7230c82189347ac5833e51a20611,
+        type: 3}
+      propertyPath: container
+      value: 
+      objectReference: {fileID: 55284317}
     - target: {fileID: 8100572908869963905, guid: bbfa7230c82189347ac5833e51a20611,
         type: 3}
       propertyPath: m_Enabled
@@ -1405,6 +1410,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28b92887a2073ec48ac68c0225045454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &356745896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6793940217956393073, guid: bbfa7230c82189347ac5833e51a20611,
+    type: 3}
+  m_PrefabInstance: {fileID: 356745894}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82225fec08b8422d81c779bcd3d01b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &374164272 stripped
@@ -3881,7 +3898,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 356745896}
         m_MethodName: HideDoorMessage
         m_Mode: 1
         m_Arguments:
@@ -20757,7 +20774,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092700789}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6ca18473c9c793a4a9e9f755d81f1ad6, type: 3}
