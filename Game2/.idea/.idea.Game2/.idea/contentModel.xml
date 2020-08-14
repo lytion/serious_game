@@ -68,6 +68,7 @@
           <e p="Goal.cs" t="Include" />
           <e p="Hazard.cs" t="Include" />
           <e p="HealthBar.cs" t="Include" />
+          <e p="InfoMessage.cs" t="Include" />
           <e p="Item.cs" t="Include" />
           <e p="Menu" t="Include">
             <e p="LauchGame.cs" t="Include" />
@@ -114,6 +115,7 @@
               </e>
             </e>
           </e>
+          <e p="Tutorial.cs" t="Include" />
         </e>
         <e p="Sprites" t="Include">
           <e p="roguelike-cave-pack" t="Include">
