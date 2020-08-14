@@ -7,11 +7,15 @@ public class InitQuestion : MonoBehaviour
 {
     public List<Question> allQuestion = new List<Question>();
     public List<Question> tutorialQuestion = new List<Question>();
-
+    public List<Question> mapQuestion2 = new List<Question>();
+    public List<Question> mapQuestion3 = new List<Question>();
+    
     public List<Question> GetAllQuestions() { return allQuestion;}
     public List<Question> GetTutorialQuestion() { return tutorialQuestion;}
+    public List<Question> GetMapQuestion2() { return mapQuestion2;}
+    public List<Question> GetMapQuestion3() { return mapQuestion3;}
 
-    public void Start()
+        public void Start()
     {
         tutorialQuestion.Add(new Question()
         {
@@ -469,14 +473,776 @@ public class InitQuestion : MonoBehaviour
             },
             explanation = new List<string>()
             {
-                "'#' is the correct answer, the others are used protect the cyber environment.",
-                "'#' is the correct answer, the others are used protect the cyber environment.",
-                "'#' is the correct answer, the others are used protect the cyber environment.",
-                "'#' is the correct answer, the others are used protect the cyber environment.",
+                "'#' is the correct answer, the others are used to protect the cyber environment.",
+                "'#' is the correct answer, the others are used to protect the cyber environment.",
+                "'#' is the correct answer, the others are used to protect the cyber environment.",
+                "'#' is the correct answer, the others are used to protect the cyber environment.",
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
             index = 18,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What word refers to this definition 'Weakness in the system, could originate from design, implementation, context, … '",
+            goodAnswer = new List<string>()
+            {
+                "vulnerability",
+            },
+            badAnswer = new List<string>()
+            {
+              "threat",
+              "attack",
+              "control",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 19,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What word refers to this definition 'Circumstances or events that could potentially lead to harm or lost'",
+            goodAnswer = new List<string>()
+            {
+                "threat",
+            },
+            badAnswer = new List<string>()
+            {
+                "vulnerability",
+                "attack",
+                "control",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 20,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What word refers to this definition 'Attempt to exploit a vulnerability'",
+            goodAnswer = new List<string>()
+            {
+                "attack",
+            },
+            badAnswer = new List<string>()
+            {
+                "vulnerability",
+                "threat",
+                "control",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 21,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What word refers to this definition 'Action used to remove or limit a vulnerability'",
+            goodAnswer = new List<string>()
+            {
+                "control",
+            },
+            badAnswer = new List<string>()
+            {
+                "vulnerability",
+                "threat",
+                "attack",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 22,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What type of attack refers to 'An unauthorized party gains access to an asset'?",
+            goodAnswer = new List<string>()
+            {
+                "Interception",
+            },
+            badAnswer = new List<string>()
+            {
+                "Interruption",
+                "Modification",
+                "Fabrication",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 23,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What type of attack refers to 'An asset is destroyed or becomes unavailable'?",
+            goodAnswer = new List<string>()
+            {
+                "Interruption",
+            },
+            badAnswer = new List<string>()
+            {
+                "Interception",
+                "Modification",
+                "Fabrication",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 24,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What type of attack refers to 'An unauthorized party modify an asset'?",
+            goodAnswer = new List<string>()
+            {
+                "Modification",
+            },
+            badAnswer = new List<string>()
+            {
+                "Interception",
+                "Interruption",
+                "Fabrication",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 25,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What type of attack refers to 'An unauthorized party insert counterfeit objects into the system'?",
+            goodAnswer = new List<string>()
+            {
+                "Fabrication",
+            },
+            badAnswer = new List<string>()
+            {
+                "Interception",
+                "Interruption",
+                "Modification",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 26,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What type of attack refers to 'An unauthorized party insert counterfeit objects into the system'?",
+            goodAnswer = new List<string>()
+            {
+                "Fabrication",
+            },
+            badAnswer = new List<string>()
+            {
+                "Interception",
+                "Interruption",
+                "Modification",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 27,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What attack type is it: 'Access to confidential information'?",
+            goodAnswer = new List<string>()
+            {
+                "Interception",
+            },
+            badAnswer = new List<string>()
+            {
+                "Fabrication",
+                "Interruption",
+                "Modification",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer, because the Interception allows the attacker to get informations",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 28,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What attack type is it: 'Copying copyrighted information'?",
+            goodAnswer = new List<string>()
+            {
+                "Interception",
+            },
+            badAnswer = new List<string>()
+            {
+                "Fabrication",
+                "Interruption",
+                "Modification",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer, because the Interception allows the attacker to get informations",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 29,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What attack type is it: 'Hardware stolen (e.g. phone, laptop, smart device)'?",
+            goodAnswer = new List<string>()
+            {
+                "Interception",
+            },
+            badAnswer = new List<string>()
+            {
+                "Fabrication",
+                "Interruption",
+                "Modification",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer, because the Interception allows the attacker to get informations",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 30,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What attack type is it: 'Network attack (e.g. Distributed Denial of service (DDOS))'?",
+            goodAnswer = new List<string>()
+            {
+                "Interruption",
+            },
+            badAnswer = new List<string>()
+            {
+                "Fabrication",
+                "Interception",
+                "Modification",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer, because a DDOS can make a website unavailable",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 31,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What attack type is it: 'Changing a bank account in a database'?",
+            goodAnswer = new List<string>()
+            {
+                "Modification",
+            },
+            badAnswer = new List<string>()
+            {
+                "Fabrication",
+                "Interception",
+                "Interruption",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer, because it will change the value of your bank account in the database",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 32,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What attack type is it: 'Website defacement (When an attacker changes a website after breaking into it.)'?",
+            goodAnswer = new List<string>()
+            {
+                "Modification",
+            },
+            badAnswer = new List<string>()
+            {
+                "Fabrication",
+                "Interception",
+                "Interruption",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer, because it will change the website",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 33,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What attack type is it: 'Altering a program'?",
+            goodAnswer = new List<string>()
+            {
+                "Modification",
+            },
+            badAnswer = new List<string>()
+            {
+                "Fabrication",
+                "Interception",
+                "Interruption",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer, because it will change the program",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 34,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What attack type is it: 'Changing the content of an email'?",
+            goodAnswer = new List<string>()
+            {
+                "Modification",
+            },
+            badAnswer = new List<string>()
+            {
+                "Fabrication",
+                "Interception",
+                "Interruption",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer, because it will change the content of the email",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 35,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "What attack type is it: 'Add records in a database'?",
+            goodAnswer = new List<string>()
+            {
+                "Fabrication",
+            },
+            badAnswer = new List<string>()
+            {
+                "Modification",
+                "Interception",
+                "Interruption",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer, because it will add a new record in the database",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 36,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "Which one of the following attacker types is an amateur?",
+            goodAnswer = new List<string>()
+            {
+                "Script Kiddies",
+            },
+            badAnswer = new List<string>()
+            {
+                "Crackers",
+                "Hacktivists",
+                "Terrorists",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 37,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "Which one of the following attacker types use the knowledge of an underground community?",
+            goodAnswer = new List<string>()
+            {
+                "Crackers",
+            },
+            badAnswer = new List<string>()
+            {
+                "Script Kiddies",
+                "Hacktivists",
+                "Terrorists",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 38,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "Which one of the following attacker types hack for a specific cause?",
+            goodAnswer = new List<string>()
+            {
+                "Hacktivists",
+            },
+            badAnswer = new List<string>()
+            {
+                "Crackers",
+                "Script Kiddies",
+                "Terrorists",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 39,
+        });
+        mapQuestion2.Add(new Question()
+        {
+            question = "Which one of the following attacker types hack to destroy?",
+            goodAnswer = new List<string>()
+            {
+                "Terrorists",
+            },
+            badAnswer = new List<string>()
+            {
+                "Crackers",
+                "Hacktivists",
+                "Script Kiddies",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 40,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "Which of the following process correspond to this sentence: 'Find what assets are important in a company.'?",
+            goodAnswer = new List<string>()
+            {
+                "identify",
+            },
+            badAnswer = new List<string>()
+            {
+                "analyse",
+                "treat",
+                "monitor",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 41,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "Which of the following process correspond to this sentence:'Determine threats that an asset may face.'?",
+            goodAnswer = new List<string>()
+            {
+                "identify",
+            },
+            badAnswer = new List<string>()
+            {
+                "analyse",
+                "treat",
+                "monitor",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 42,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "Which of the following process correspond to this sentence: 'Find vulnerabilities that may be exploited.'?",
+            goodAnswer = new List<string>()
+            {
+                "identify",
+            },
+            badAnswer = new List<string>()
+            {
+                "analyse",
+                "treat",
+                "monitor",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 43,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "Which of the following process correspond to this sentence: 'Determine the probability of occurrence.'?",
+            goodAnswer = new List<string>()
+            {
+                "analyse",
+            },
+            badAnswer = new List<string>()
+            {
+                "identify",
+                "treat",
+                "monitor",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 44,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "Which of the following process correspond to this sentence: 'Define the impact/harm/loss to the related asset.'?",
+            goodAnswer = new List<string>()
+            {
+                "analyse",
+            },
+            badAnswer = new List<string>()
+            {
+                "identify",
+                "treat",
+                "monitor",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 45,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "Which of the following process correspond to this sentence: 'Determine risk rating by combining probability and impact.'?",
+            goodAnswer = new List<string>()
+            {
+                "analyse",
+            },
+            badAnswer = new List<string>()
+            {
+                "identify",
+                "treat",
+                "monitor",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 46,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "What can you determine by compiling the organizational experience, published reports, the estimated cost of attack, the attractiveness of a target and the vulnerability exposure?",
+            goodAnswer = new List<string>()
+            {
+                "attack probability",
+            },
+            badAnswer = new List<string>()
+            {
+                "impact valuation",
+                "risk level",
+                "vulnerability",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 47,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "What is the security risk management?",
+            goodAnswer = new List<string>()
+            {
+                "Respond to risk",
+            },
+            badAnswer = new List<string>()
+            {
+                "risk level",
+                "impact evaluation",
+                "vulnerability",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer, the other parts of the risk management are: Establish the context, Assess risk, Monitor Risk",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 48,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "What are the main component of the security risk management lifecycle?",
+            goodAnswer = new List<string>()
+            {
+                "Identify",
+            },
+            badAnswer = new List<string>()
+            {
+                "patch",
+                "impact evaluation",
+                "Respond to risk",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer, the other parts of the risk management lifecycle are: Analyse, Treat, Monitor",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 49,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "What is the Risk?",
+            goodAnswer = new List<string>()
+            {
+                "Something related to Threat, Assets and Vulnerability",
+            },
+            badAnswer = new List<string>()
+            {
+                "Something related to Threat and Assets",
+                "Something related to threat and Vulnerability",
+                "Something related to Vulnerability and Assets",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 50,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "Which one is a key asset?",
+            goodAnswer = new List<string>()
+            {
+                "Money",
+                "informations",
+            },
+            badAnswer = new List<string>()
+            {
+                "Cars",
+                "Planes",
+                "Laptop",
+                "Computer",
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 51,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "What will be the consequences of a loss of confidentiality?",
+            goodAnswer = new List<string>()
+            {
+                "legal implications",
+        },
+            badAnswer = new List<string>()
+            {
+                "cost of lost work",
+                "recovering costs",
+                "reputation",
+                
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 52,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "What will be the consequences of a loss of integrity/unavailability?",
+            goodAnswer = new List<string>()
+            {
+                "recovering costs",
+                "cost of lost work",
+            },
+            badAnswer = new List<string>()
+            {
+                "legal implications",
+                "nothing",
+                "reputation",
+                
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 53,
+        });
+        mapQuestion3.Add(new Question()
+        {
+            question = "What will be the consequences of an indirect harm?",
+            goodAnswer = new List<string>()
+            {
+                "reputation",
+            },
+            badAnswer = new List<string>()
+            {
+                "legal implications",
+                "recovering costs",
+                "cost of lost work",
+                
+            },
+            explanation = new List<string>()
+            {
+                "'#' is the correct answer",
+            },
+            hasAnsweredCorrectly = false,
+            hasAnswered = false,
+            index = 54,
         });
     }
 }
