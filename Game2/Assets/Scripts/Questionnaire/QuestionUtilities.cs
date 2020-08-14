@@ -40,7 +40,12 @@ public class QuestionUtilities : MonoBehaviour
         {
             if (!a.hasAnswered)
             {
-                _initQuestion.allQuestion[a.index].hasAnswered = true;
+                if (_nextScene != null && _nextScene == "intro1_map")
+                    _initQuestion.mapQuestion1[a.index].hasAnswered = true;
+                else if (_nextScene != null && _nextScene == "intro2_map")
+                    _initQuestion.mapQuestion2[a.index].hasAnswered = true;
+                else if (_nextScene != null && _nextScene == "Risk_map")
+                    _initQuestion.mapQuestion3[a.index].hasAnswered = true;
                 questionIndex = a.index;
                 return new Question{question = a.question,
                     goodAnswer = new List<string>(a.goodAnswer), 
@@ -61,7 +66,12 @@ public class QuestionUtilities : MonoBehaviour
         {
             if (a.hasAnswered && !a.hasAnsweredCorrectly)
             {
-                _initQuestion.allQuestion[a.index].hasAnswered = true;
+                if (_nextScene != null && _nextScene == "intro1_map")
+                    _initQuestion.mapQuestion1[a.index].hasAnswered = true;
+                else if (_nextScene != null && _nextScene == "intro2_map")
+                    _initQuestion.mapQuestion2[a.index].hasAnswered = true;
+                else if (_nextScene != null && _nextScene == "Risk_map")
+                    _initQuestion.mapQuestion3[a.index].hasAnswered = true;
                 questionIndex = a.index;
                 return new Question{question = a.question,
                     goodAnswer = new List<string>(a.goodAnswer), 
@@ -85,7 +95,12 @@ public class QuestionUtilities : MonoBehaviour
             if (a.hasAnswered && !a.hasAnsweredCorrectly)
             {
                 nonCorrectAnswer = true;
-                _initQuestion.allQuestion[a.index].hasAnswered = false;
+                if (_nextScene != null && _nextScene == "intro1_map")
+                    _initQuestion.mapQuestion1[a.index].hasAnswered = false;
+                else if (_nextScene != null && _nextScene == "intro2_map")
+                    _initQuestion.mapQuestion2[a.index].hasAnswered = false;
+                else if (_nextScene != null && _nextScene == "Risk_map")
+                    _initQuestion.mapQuestion3[a.index].hasAnswered = false;
                 Debug.Log(">>> Questions reset!");
             }
         }
@@ -95,8 +110,22 @@ public class QuestionUtilities : MonoBehaviour
             Debug.Log(">>> All questions have been correctly answered...");
             foreach (var a in allQuestions)
             {
-                _initQuestion.allQuestion[a.index].hasAnswered = false;
-                _initQuestion.allQuestion[a.index].hasAnsweredCorrectly = false;
+                if (_nextScene != null && _nextScene == "intro1_map")
+                {
+                    _initQuestion.mapQuestion1[a.index].hasAnswered = false;
+                    _initQuestion.mapQuestion1[a.index].hasAnsweredCorrectly = false;
+                }
+                else if (_nextScene != null && _nextScene == "intro2_map")
+                {
+                    _initQuestion.mapQuestion2[a.index].hasAnswered = false;
+                    _initQuestion.mapQuestion2[a.index].hasAnsweredCorrectly = false;
+                }
+                else if (_nextScene != null && _nextScene == "Risk_map")
+                {
+                    _initQuestion.mapQuestion3[a.index].hasAnswered = false;
+                    _initQuestion.mapQuestion3[a.index].hasAnsweredCorrectly = false;
+                }
+                
             }
             Debug.Log(">>> All questions have been reset!");
         }
@@ -106,8 +135,12 @@ public class QuestionUtilities : MonoBehaviour
     {
         if (manager.GetComponent<GameData>().GetIsTutorial())
             allQuestions = _initQuestion.GetTutorialQuestion();
-        else
-            allQuestions = _initQuestion.GetAllQuestions();
+        else if (_nextScene != null && _nextScene == "intro1_map")
+            allQuestions = _initQuestion.GetMapQuestion1();
+        else if (_nextScene != null && _nextScene == "intro2_map")
+            allQuestions = _initQuestion.GetMapQuestion2();
+        else if (_nextScene != null && _nextScene == "Risk_map")
+            allQuestions = _initQuestion.GetMapQuestion3();
         allQuestions = allQuestions.OrderBy(x => Guid.NewGuid()).ToList();
         Question questionPicked;
         int nbQuestionAnswered = 0;
@@ -264,7 +297,13 @@ public class QuestionUtilities : MonoBehaviour
                 _enemy.health -= manager.GetComponent<GameData>().GetPlayerAtk();
             else if (_enemyType == "chest")
                 _chest.health -= manager.GetComponent<GameData>().GetPlayerAtk();
-            _initQuestion.allQuestion[questionIndex].hasAnsweredCorrectly = true;
+            
+            if (_nextScene != null && _nextScene == "intro1_map")
+                _initQuestion.mapQuestion1[questionIndex].hasAnsweredCorrectly = true;
+            else if (_nextScene != null && _nextScene == "intro2_map")
+                _initQuestion.mapQuestion2[questionIndex].hasAnsweredCorrectly = true;
+            else if (_nextScene != null && _nextScene == "Risk_map")
+                _initQuestion.mapQuestion3[questionIndex].hasAnsweredCorrectly = true;
             okButton.SetActive(true);
         }
         else

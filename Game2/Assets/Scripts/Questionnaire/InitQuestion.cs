@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class InitQuestion : MonoBehaviour
 {
-    public List<Question> allQuestion = new List<Question>();
     public List<Question> tutorialQuestion = new List<Question>();
+    public List<Question> mapQuestion1 = new List<Question>();
     public List<Question> mapQuestion2 = new List<Question>();
     public List<Question> mapQuestion3 = new List<Question>();
-    
-    public List<Question> GetAllQuestions() { return allQuestion;}
+
     public List<Question> GetTutorialQuestion() { return tutorialQuestion;}
+    public List<Question> GetMapQuestion1() { return mapQuestion1;}
     public List<Question> GetMapQuestion2() { return mapQuestion2;}
     public List<Question> GetMapQuestion3() { return mapQuestion3;}
 
-        public void Start()
+    public void Start()
     {
         tutorialQuestion.Add(new Question()
         {
@@ -40,8 +40,9 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 0,
         });
-        // All questions
-        allQuestion.Add(new Question()
+        
+        // All questions map 1
+        mapQuestion1.Add(new Question()
         {
             question = "Which of these passwords is the most secure?",
             goodAnswer = new List<string>()
@@ -65,7 +66,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 0,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "Which of these passwords is the most secure and easiest to remember?",
             goodAnswer = new List<string>()
@@ -91,7 +92,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 1,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "Which of these passwords is weak?",
             goodAnswer = new List<string>()
@@ -118,7 +119,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 2,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "Which of these requirements make a password more secure?",
             goodAnswer = new List<string>()
@@ -141,7 +142,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 3,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "What the encryption is used for?",
             goodAnswer = new List<string>()
@@ -164,7 +165,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 4,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "What hash functions are used for?",
             goodAnswer = new List<string>()
@@ -186,7 +187,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 5,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "In which domain is a password useful?",
             goodAnswer = new List<string>()
@@ -208,7 +209,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 6,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "Which domain this definition refers to? 'preventing unauthorized disclosure of informations. Includes secrecy, privacy'?",
             goodAnswer = new List<string>()
@@ -230,7 +231,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 7,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "Which domain this definition refers to? 'preventing unauthorized modification of data and system'?",
             goodAnswer = new List<string>()
@@ -252,7 +253,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 8,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "Which domain this definition refers to? 'preventing downtime of systems or inability to access data/information'?",
             goodAnswer = new List<string>()
@@ -274,7 +275,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 9,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "Which of these methods confirm the truth of your identity?",
             goodAnswer = new List<string>()
@@ -297,7 +298,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 10,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "What is the definition of Authentication?",
             goodAnswer = new List<string>()
@@ -318,7 +319,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 11,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "What is the definition of Authorization?",
             goodAnswer = new List<string>()
@@ -339,7 +340,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 12,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "What is the definition of Non-repudiation?",
             goodAnswer = new List<string>()
@@ -360,7 +361,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 13,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "What is the cyber security?",
             goodAnswer = new List<string>()
@@ -381,7 +382,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 14,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "What is the information security?",
             goodAnswer = new List<string>()
@@ -402,7 +403,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 15,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "What is the technology security?",
             goodAnswer = new List<string>()
@@ -423,7 +424,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 16,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "Which word is used to protect cyber environment, organization and user's assets?",
             goodAnswer = new List<string>()
@@ -453,7 +454,7 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 17,
         });
-        allQuestion.Add(new Question()
+        mapQuestion1.Add(new Question()
         {
             question = "Which word is used in a cyber environment by organization and user's assets?",
             goodAnswer = new List<string>()
@@ -482,6 +483,8 @@ public class InitQuestion : MonoBehaviour
             hasAnswered = false,
             index = 18,
         });
+        
+        // All questions map 2
         mapQuestion2.Add(new Question()
         {
             question = "What word refers to this definition 'Weakness in the system, could originate from design, implementation, context, … '",
@@ -501,7 +504,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 19,
+            index = 0,
         });
         mapQuestion2.Add(new Question()
         {
@@ -522,7 +525,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 20,
+            index = 1,
         });
         mapQuestion2.Add(new Question()
         {
@@ -543,7 +546,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 21,
+            index = 2,
         });
         mapQuestion2.Add(new Question()
         {
@@ -564,7 +567,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 22,
+            index = 3,
         });
         mapQuestion2.Add(new Question()
         {
@@ -585,7 +588,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 23,
+            index = 4,
         });
         mapQuestion2.Add(new Question()
         {
@@ -606,7 +609,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 24,
+            index = 5,
         });
         mapQuestion2.Add(new Question()
         {
@@ -627,7 +630,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 25,
+            index = 6,
         });
         mapQuestion2.Add(new Question()
         {
@@ -648,7 +651,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 26,
+            index = 7,
         });
         mapQuestion2.Add(new Question()
         {
@@ -669,7 +672,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 27,
+            index = 8,
         });
         mapQuestion2.Add(new Question()
         {
@@ -690,7 +693,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 28,
+            index = 9,
         });
         mapQuestion2.Add(new Question()
         {
@@ -711,7 +714,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 29,
+            index = 10,
         });
         mapQuestion2.Add(new Question()
         {
@@ -732,7 +735,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 30,
+            index = 11,
         });
         mapQuestion2.Add(new Question()
         {
@@ -753,7 +756,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 31,
+            index = 12,
         });
         mapQuestion2.Add(new Question()
         {
@@ -774,7 +777,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 32,
+            index = 13,
         });
         mapQuestion2.Add(new Question()
         {
@@ -795,7 +798,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 33,
+            index = 14,
         });
         mapQuestion2.Add(new Question()
         {
@@ -816,7 +819,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 34,
+            index = 15,
         });
         mapQuestion2.Add(new Question()
         {
@@ -837,7 +840,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 35,
+            index = 16,
         });
         mapQuestion2.Add(new Question()
         {
@@ -858,7 +861,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 36,
+            index = 17,
         });
         mapQuestion2.Add(new Question()
         {
@@ -879,7 +882,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 37,
+            index = 18,
         });
         mapQuestion2.Add(new Question()
         {
@@ -900,7 +903,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 38,
+            index = 19,
         });
         mapQuestion2.Add(new Question()
         {
@@ -921,7 +924,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 39,
+            index = 20,
         });
         mapQuestion2.Add(new Question()
         {
@@ -942,8 +945,10 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 40,
+            index = 21,
         });
+        
+        // All questions map 3
         mapQuestion3.Add(new Question()
         {
             question = "Which of the following process correspond to this sentence: 'Find what assets are important in a company.'?",
@@ -963,7 +968,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 41,
+            index = 0,
         });
         mapQuestion3.Add(new Question()
         {
@@ -984,7 +989,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 42,
+            index = 1,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1005,7 +1010,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 43,
+            index = 2,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1026,7 +1031,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 44,
+            index = 3,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1047,7 +1052,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 45,
+            index = 4,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1068,7 +1073,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 46,
+            index = 5,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1089,7 +1094,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 47,
+            index = 6,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1110,7 +1115,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 48,
+            index = 7,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1131,7 +1136,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 49,
+            index = 8,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1152,7 +1157,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 50,
+            index = 9,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1175,7 +1180,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 51,
+            index = 10,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1197,7 +1202,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 52,
+            index = 11,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1220,7 +1225,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 53,
+            index = 12,
         });
         mapQuestion3.Add(new Question()
         {
@@ -1242,7 +1247,7 @@ public class InitQuestion : MonoBehaviour
             },
             hasAnsweredCorrectly = false,
             hasAnswered = false,
-            index = 54,
+            index = 13,
         });
     }
 }

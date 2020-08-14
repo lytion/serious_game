@@ -23,6 +23,15 @@ public class LauchGame : MonoBehaviour
         GameObject.Find("GameManagerMenu").GetComponent<GameData>().SetIntroToNextScene("intro2_map");
         SceneManager.LoadScene("Game");
     }
+    
+    public void LaunchRiskManagement()
+    {
+        if (GameObject.Find("GameManager"))
+            GameObject.Find("GameManager").GetComponent<GameData>().ResetStats();
+        CleanObject();
+        GameObject.Find("GameManagerMenu").GetComponent<GameData>().SetIntroToNextScene("Risk_map");
+        SceneManager.LoadScene("Game");
+    }
 
     public void CleanObject()
     {
