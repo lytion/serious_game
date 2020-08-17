@@ -1960,7 +1960,7 @@ GameObject:
   - component: {fileID: 558362921}
   m_Layer: 0
   m_Name: key
-  m_TagString: chest
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2098,6 +2098,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5711116065507078979, guid: a7066fc72e22ee44f9c19babce23c5f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711116065709640247, guid: a7066fc72e22ee44f9c19babce23c5f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711116065949637434, guid: a7066fc72e22ee44f9c19babce23c5f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711116066044761993, guid: a7066fc72e22ee44f9c19babce23c5f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711116066278150319, guid: a7066fc72e22ee44f9c19babce23c5f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5711116066575843424, guid: a7066fc72e22ee44f9c19babce23c5f1,
         type: 3}
       propertyPath: m_Name
@@ -2157,6 +2182,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711116066660576296, guid: a7066fc72e22ee44f9c19babce23c5f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711116066873046728, guid: a7066fc72e22ee44f9c19babce23c5f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711116066956731225, guid: a7066fc72e22ee44f9c19babce23c5f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711116067296430126, guid: a7066fc72e22ee44f9c19babce23c5f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711116067549862687, guid: a7066fc72e22ee44f9c19babce23c5f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7066fc72e22ee44f9c19babce23c5f1, type: 3}
@@ -19882,6 +19932,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  moveSpot: []
+  startWaitTime: 0
   speedMultiplier: 5
 --- !u!50 &1571408675
 Rigidbody2D:
